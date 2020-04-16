@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint</title>
+
+    @Styles.Render("~/Content/css")
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/bootstrap")
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+            .topnav a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+                .topnav a:hover {
+                    background-color: #ddd;
+                    color: black;
+                }
+
+                .topnav a.active {
+                    background-color: #4CAF50;
+                    color: white;
+                }
+    </style>
+</head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="topnav">
+            <div class="container">
+                <div class="navbar-right">
+                    <div class="dropdown">
+                        <a class=" dropbtn" href="#">
+                            What we do?
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+
+                        <div class="dropdown-content">
+                            <a href="@Url.Action("Index", "Foods")">Food</a>
+                            <a href="@Url.Action("Search", "Home")">Cloth</a>
+                            <a href="@Url.Action("Search", "Home")">Recycle</a>
+
+                        </div>
+                    </div>
+
+                    @Html.ActionLink("Lifestyle", "Index", "Home")
+                    @Html.ActionLink("Commute", "Index", "Home")
+                    @Html.ActionLink("About us", "About", "Home")
+                    @Html.ActionLink("Contact", "Contact", "Home")
+                </div>
+
+                <div class="navbar-left">
+                    <div class="nav navbar-nav">
+
+                        <h2 class="text-muted"> Know your FootPrint</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                @*<div class="navbar navbar-inverse navbar-fixed-top">
+                        <div class="container">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                            </div>
+                            <div class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav">
+                                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>*@
+                <div class="container body-content">
+                    @RenderBody()
+
+                    <hr />
+                    <footer>
+                        <p style="color:white">&copy; @DateTime.Now.Year - Welcome to Carbon footprint</p>
+                    </footer>
+                </div>
+
+                @Scripts.Render("~/bundles/jquery")
+                @Scripts.Render("~/bundles/bootstrap")
+                @RenderSection("scripts", required: false)
+</body>
+</html>
