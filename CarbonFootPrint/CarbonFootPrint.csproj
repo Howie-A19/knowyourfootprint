@@ -130,6 +130,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\FoodsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SubscribersController.cs" />
+    <Compile Include="Controllers\TipsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -173,6 +175,7 @@
       <DependentUpon>FootPrintModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\FoodCalculate.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\FootPrintOne.mdf" />
@@ -183,12 +186,23 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\general.css" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\images\coverPic.jpg" />
+    <Content Include="Content\images\foodCoverPage.jpg" />
     <Content Include="Content\images\forest.jpg" />
     <Content Include="Content\images\homeOne.jpg" />
     <Content Include="Content\images\homeThree.jpg" />
     <Content Include="Content\images\homeTwo.jpg" />
+    <Content Include="Content\images\SubscriberCardboard.jpg" />
+    <Content Include="Content\images\SubscriberHemp.jpg" />
+    <Content Include="Content\images\SubscriberLight.jpg" />
+    <Content Include="Content\images\SubscriberNylon.jpg" />
+    <Content Include="Content\images\SubscriberOrange.jpg" />
+    <Content Include="Content\images\SubscriberPlastic.jpg" />
+    <Content Include="Content\images\SubscriberSalmon.jpg" />
+    <Content Include="Content\images\SubscriberVegetables.jpg" />
+    <Content Include="Content\images\SubscriberWool.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -237,11 +251,23 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Subscribers\Create.cshtml" />
+    <Content Include="Views\Subscribers\Delete.cshtml" />
+    <Content Include="Views\Subscribers\Details.cshtml" />
+    <Content Include="Views\Subscribers\Edit.cshtml" />
+    <Content Include="Views\Subscribers\Index.cshtml" />
+    <Content Include="Views\Tips\Create.cshtml" />
+    <Content Include="Views\Tips\Delete.cshtml" />
+    <Content Include="Views\Tips\Details.cshtml" />
+    <Content Include="Views\Tips\Edit.cshtml" />
+    <Content Include="Views\Tips\Index.cshtml" />
+    <Content Include="Views\Subscribers\_SubscriberPartial.cshtml" />
     <Content Include="Views\Foods\Create.cshtml" />
     <Content Include="Views\Foods\Delete.cshtml" />
     <Content Include="Views\Foods\Details.cshtml" />
     <Content Include="Views\Foods\Edit.cshtml" />
     <Content Include="Views\Foods\Index.cshtml" />
+    <Content Include="Views\Foods\FoodMain.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

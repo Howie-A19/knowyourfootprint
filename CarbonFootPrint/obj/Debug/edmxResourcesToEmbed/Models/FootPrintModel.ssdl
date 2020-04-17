@@ -52,10 +52,13 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Category" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Energy" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Avg_Carbon_Footprint" Type="real" Nullable="false" />
+    <Property Name="Energy_PER_100gm" Type="real" Nullable="false" />
+    <Property Name="PER_SERVING_gm" Type="real" Nullable="false" />
+    <Property Name="E1_ACFP_PER_100gm" Type="real" Nullable="false" />
+    <Property Name="PROTEIN_PER_100gm" Type="real" Nullable="false" />
+    <Property Name="E2_ACFP_PROTEIN_PER_100gm" Type="real" Nullable="false" />
+    <Property Name="E3_ACFP_ENERGY_PER_100KCAL" Type="real" Nullable="false" />
     <Property Name="Image_Path" Type="varchar" MaxLength="100" />
     <Property Name="Suggestions" Type="nvarchar(max)" />
     <Property Name="Category_Id" Type="int" Nullable="false" />
@@ -115,7 +118,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Apparels__Catego__3B75D760">
+  <Association Name="FK__Apparels__Catego__619B8048">
     <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
     <End Role="Apparels" Type="Self.Apparels" Multiplicity="*" />
     <ReferentialConstraint>
@@ -127,7 +130,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Cloth_Var__Categ__3E52440B">
+  <Association Name="FK__Cloth_Var__Categ__6477ECF3">
     <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
     <End Role="Cloth_Varieties" Type="Self.Cloth_Varieties" Multiplicity="*" />
     <ReferentialConstraint>
@@ -139,7 +142,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Foods__Category___38996AB5">
+  <Association Name="FK__Foods__Category___5EBF139D">
     <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
     <End Role="Foods" Type="Self.Foods" Multiplicity="*" />
     <ReferentialConstraint>
@@ -151,7 +154,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Recycle__Categor__412EB0B6">
+  <Association Name="FK__Recycle__Categor__6754599E">
     <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
     <End Role="Recycle" Type="Self.Recycle" Multiplicity="*" />
     <ReferentialConstraint>
@@ -163,7 +166,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Subscribe__Tips___47DBAE45">
+  <Association Name="FK__Subscribe__Tips___6E01572D">
     <End Role="Tips" Type="Self.Tips" Multiplicity="1" />
     <End Role="Subscribers" Type="Self.Subscribers" Multiplicity="*" />
     <ReferentialConstraint>
@@ -228,23 +231,23 @@
       <End Role="Cloth_Varieties" EntitySet="Cloth_Varieties" />
       <End Role="food_apparels_cloth_recycle_tips" EntitySet="food_apparels_cloth_recycle_tips" />
     </AssociationSet>
-    <AssociationSet Name="FK__Apparels__Catego__3B75D760" Association="Self.FK__Apparels__Catego__3B75D760">
+    <AssociationSet Name="FK__Apparels__Catego__619B8048" Association="Self.FK__Apparels__Catego__619B8048">
       <End Role="Categories" EntitySet="Categories" />
       <End Role="Apparels" EntitySet="Apparels" />
     </AssociationSet>
-    <AssociationSet Name="FK__Cloth_Var__Categ__3E52440B" Association="Self.FK__Cloth_Var__Categ__3E52440B">
+    <AssociationSet Name="FK__Cloth_Var__Categ__6477ECF3" Association="Self.FK__Cloth_Var__Categ__6477ECF3">
       <End Role="Categories" EntitySet="Categories" />
       <End Role="Cloth_Varieties" EntitySet="Cloth_Varieties" />
     </AssociationSet>
-    <AssociationSet Name="FK__Foods__Category___38996AB5" Association="Self.FK__Foods__Category___38996AB5">
+    <AssociationSet Name="FK__Foods__Category___5EBF139D" Association="Self.FK__Foods__Category___5EBF139D">
       <End Role="Categories" EntitySet="Categories" />
       <End Role="Foods" EntitySet="Foods" />
     </AssociationSet>
-    <AssociationSet Name="FK__Recycle__Categor__412EB0B6" Association="Self.FK__Recycle__Categor__412EB0B6">
+    <AssociationSet Name="FK__Recycle__Categor__6754599E" Association="Self.FK__Recycle__Categor__6754599E">
       <End Role="Categories" EntitySet="Categories" />
       <End Role="Recycle" EntitySet="Recycle" />
     </AssociationSet>
-    <AssociationSet Name="FK__Subscribe__Tips___47DBAE45" Association="Self.FK__Subscribe__Tips___47DBAE45">
+    <AssociationSet Name="FK__Subscribe__Tips___6E01572D" Association="Self.FK__Subscribe__Tips___6E01572D">
       <End Role="Tips" EntitySet="Tips" />
       <End Role="Subscribers" EntitySet="Subscribers" />
     </AssociationSet>

@@ -13,16 +13,25 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Category)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Energy)
+            @Html.DisplayNameFor(model => model.Energy_PER_100gm)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Avg_Carbon_Footprint)
+            @Html.DisplayNameFor(model => model.PER_SERVING_gm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.E1_ACFP_PER_100gm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PROTEIN_PER_100gm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.E2_ACFP_PROTEIN_PER_100gm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.E3_ACFP_ENERGY_PER_100KCAL)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Image_Path)
@@ -36,37 +45,44 @@
         <th></th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Energy)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Avg_Carbon_Footprint)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Image_Path)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Suggestions)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category1.Kind)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
-    }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Energy_PER_100gm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PER_SERVING_gm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.E1_ACFP_PER_100gm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PROTEIN_PER_100gm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.E2_ACFP_PROTEIN_PER_100gm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.E3_ACFP_ENERGY_PER_100KCAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image_Path)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Suggestions)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category1.Kind)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
 
 </table>
-@Styles.Render("~/Content/css")

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="FootPrintOneModelStoreContainer" CdmEntityContainer="FootPrintOneEntities1">
+  <EntityContainerMapping StorageEntityContainer="FootPrintOneModelStoreContainer" CdmEntityContainer="FootPrintOneEntities">
     <EntitySetMapping Name="Apparels">
       <EntityTypeMapping TypeName="FootPrintOneModel.Apparel">
         <MappingFragment StoreEntitySet="Apparels">
@@ -52,10 +52,13 @@
       <EntityTypeMapping TypeName="FootPrintOneModel.Food">
         <MappingFragment StoreEntitySet="Foods">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Category" ColumnName="Category" />
-          <ScalarProperty Name="Energy" ColumnName="Energy" />
-          <ScalarProperty Name="Avg_Carbon_Footprint" ColumnName="Avg_Carbon_Footprint" />
+          <ScalarProperty Name="Energy_PER_100gm" ColumnName="Energy_PER_100gm" />
+          <ScalarProperty Name="PER_SERVING_gm" ColumnName="PER_SERVING_gm" />
+          <ScalarProperty Name="E1_ACFP_PER_100gm" ColumnName="E1_ACFP_PER_100gm" />
+          <ScalarProperty Name="PROTEIN_PER_100gm" ColumnName="PROTEIN_PER_100gm" />
+          <ScalarProperty Name="E2_ACFP_PROTEIN_PER_100gm" ColumnName="E2_ACFP_PROTEIN_PER_100gm" />
+          <ScalarProperty Name="E3_ACFP_ENERGY_PER_100KCAL" ColumnName="E3_ACFP_ENERGY_PER_100KCAL" />
           <ScalarProperty Name="Image_Path" ColumnName="Image_Path" />
           <ScalarProperty Name="Suggestions" ColumnName="Suggestions" />
           <ScalarProperty Name="Category_Id" ColumnName="Category_Id" />

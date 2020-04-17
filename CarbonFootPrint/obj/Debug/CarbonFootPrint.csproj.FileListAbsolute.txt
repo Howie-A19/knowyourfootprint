@@ -77,3 +77,4 @@ F:\Monash\4thSem\IE 1\Code\CarbonFootPrint\obj\Debug\CarbonFootPrint.csproj.Core
 F:\Monash\4thSem\IE 1\Code\CarbonFootPrint\obj\Debug\CarbonFootPrint.csproj.CopyComplete
 F:\Monash\4thSem\IE 1\Code\CarbonFootPrint\obj\Debug\CarbonFootPrint.dll
 F:\Monash\4thSem\IE 1\Code\CarbonFootPrint\obj\Debug\CarbonFootPrint.pdb
+F:\Monash\4thSem\IE 1\Code\CarbonFootPrint\obj\Debug\CarbonFootPrint.csprojAssemblyReference.cache

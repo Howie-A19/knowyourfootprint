@@ -1,9 +1,4 @@
-﻿body {
-    background-image: url("/Content/images/coverPic.jpg");
-    background-position: center; 
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+﻿
 
 .ma-logo {
     align-content: center;
@@ -12,9 +7,10 @@
     width: 30%;
 }
 
-.table{
-    color:white;
-}
+
+/*.table, .control-label, #text-color {
+    color: white;
+}*/
 .bottomleft {
     position:absolute;
     bottom: 16px;

@@ -13,10 +13,10 @@ namespace CarbonFootPrint.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FootPrintOneEntities1 : DbContext
+    public partial class FootPrintOneEntities : DbContext
     {
-        public FootPrintOneEntities1()
-            : base("name=FootPrintOneEntities1")
+        public FootPrintOneEntities()
+            : base("name=FootPrintOneEntities")
         {
         }
     

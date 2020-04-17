@@ -21,13 +21,21 @@ namespace CarbonFootPrint.Models
         }
     
         public int Id { get; set; }
-        public string Name { get; set; }
         public string Category { get; set; }
-        public string Energy { get; set; }
-        public float Avg_Carbon_Footprint { get; set; }
+        public float Energy_PER_100gm { get; set; }
+        public float PER_SERVING_gm { get; set; }
+        public float E1_ACFP_PER_100gm { get; set; }
+        public float PROTEIN_PER_100gm { get; set; }
+        public float E2_ACFP_PROTEIN_PER_100gm { get; set; }
+        public float E3_ACFP_ENERGY_PER_100KCAL { get; set; }
         public string Image_Path { get; set; }
         public string Suggestions { get; set; }
         public int Category_Id { get; set; }
+
+        public int input { get; set; }
+        public String frequency { get; set; }
+
+        public String nutrition { get; set; }
     
         public virtual Category Category1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
