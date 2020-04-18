@@ -1,0 +1,51 @@
+﻿@model CarbonFootPrint.Models.Tip
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tip</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tips_Kind)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tips_Kind)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tips_Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tips_Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image_Path)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image_Path)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tips)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tips)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

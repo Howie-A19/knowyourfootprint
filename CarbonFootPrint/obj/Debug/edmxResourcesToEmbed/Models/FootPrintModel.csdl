@@ -15,7 +15,7 @@
     <Property Name="Suggestions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Category_Id" Type="Int32" Nullable="false" />
     <NavigationProperty Name="food_apparels_cloth_recycle_tips" Relationship="Self.apparels_ts" FromRole="Apparels" ToRole="food_apparels_cloth_recycle_tips" />
-    <NavigationProperty Name="Category" Relationship="Self.FK__Apparels__Catego__3B75D760" FromRole="Apparels" ToRole="Categories" />
+    <NavigationProperty Name="Category" Relationship="Self.FK__Apparels__Catego__619B8048" FromRole="Apparels" ToRole="Categories" />
   </EntityType>
   <EntityType Name="Category">
     <Key>
@@ -23,10 +23,10 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" />
     <Property Name="Kind" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Apparels" Relationship="Self.FK__Apparels__Catego__3B75D760" FromRole="Categories" ToRole="Apparels" />
-    <NavigationProperty Name="Cloth_Varieties" Relationship="Self.FK__Cloth_Var__Categ__3E52440B" FromRole="Categories" ToRole="Cloth_Varieties" />
-    <NavigationProperty Name="Foods" Relationship="Self.FK__Foods__Category___38996AB5" FromRole="Categories" ToRole="Foods" />
-    <NavigationProperty Name="Recycles" Relationship="Self.FK__Recycle__Categor__412EB0B6" FromRole="Categories" ToRole="Recycle" />
+    <NavigationProperty Name="Apparels" Relationship="Self.FK__Apparels__Catego__619B8048" FromRole="Categories" ToRole="Apparels" />
+    <NavigationProperty Name="Cloth_Varieties" Relationship="Self.FK__Cloth_Var__Categ__6477ECF3" FromRole="Categories" ToRole="Cloth_Varieties" />
+    <NavigationProperty Name="Foods" Relationship="Self.FK__Foods__Category___5EBF139D" FromRole="Categories" ToRole="Foods" />
+    <NavigationProperty Name="Recycles" Relationship="Self.FK__Recycle__Categor__6754599E" FromRole="Categories" ToRole="Recycle" />
   </EntityType>
   <EntityType Name="Cloth_Varieties">
     <Key>
@@ -38,7 +38,7 @@
     <Property Name="Image_Path" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="Suggestions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Category_Id" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Category" Relationship="Self.FK__Cloth_Var__Categ__3E52440B" FromRole="Cloth_Varieties" ToRole="Categories" />
+    <NavigationProperty Name="Category" Relationship="Self.FK__Cloth_Var__Categ__6477ECF3" FromRole="Cloth_Varieties" ToRole="Categories" />
     <NavigationProperty Name="food_apparels_cloth_recycle_tips" Relationship="Self.clothvarieties_ts" FromRole="Cloth_Varieties" ToRole="food_apparels_cloth_recycle_tips" />
   </EntityType>
   <EntityType Name="food_apparels_cloth_recycle_tips">
@@ -65,14 +65,17 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" />
-    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Energy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Avg_Carbon_Footprint" Type="Single" Nullable="false" />
+    <Property Name="Energy_PER_100gm" Type="Single" Nullable="false" />
+    <Property Name="PER_SERVING_gm" Type="Single" Nullable="false" />
+    <Property Name="E1_ACFP_PER_100gm" Type="Single" Nullable="false" />
+    <Property Name="PROTEIN_PER_100gm" Type="Single" Nullable="false" />
+    <Property Name="E2_ACFP_PROTEIN_PER_100gm" Type="Single" Nullable="false" />
+    <Property Name="E3_ACFP_ENERGY_PER_100KCAL" Type="Single" Nullable="false" />
     <Property Name="Image_Path" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="Suggestions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Category_Id" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Category1" Relationship="Self.FK__Foods__Category___38996AB5" FromRole="Foods" ToRole="Categories" />
+    <NavigationProperty Name="Category1" Relationship="Self.FK__Foods__Category___5EBF139D" FromRole="Foods" ToRole="Categories" />
     <NavigationProperty Name="food_apparels_cloth_recycle_tips" Relationship="Self.food_ts" FromRole="Foods" ToRole="food_apparels_cloth_recycle_tips" />
   </EntityType>
   <EntityType Name="Recycle">
@@ -87,7 +90,7 @@
     <Property Name="Image_Path" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="Suggestions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Category_Id" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Category" Relationship="Self.FK__Recycle__Categor__412EB0B6" FromRole="Recycle" ToRole="Categories" />
+    <NavigationProperty Name="Category" Relationship="Self.FK__Recycle__Categor__6754599E" FromRole="Recycle" ToRole="Categories" />
     <NavigationProperty Name="food_apparels_cloth_recycle_tips" Relationship="Self.recycle_ts" FromRole="Recycle" ToRole="food_apparels_cloth_recycle_tips" />
   </EntityType>
   <EntityType Name="Subscriber">
@@ -97,7 +100,7 @@
     <Property Name="Id" Type="Int32" Nullable="false" />
     <Property Name="Mail_Id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Tips_Id" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Tip" Relationship="Self.FK__Subscribe__Tips___47DBAE45" FromRole="Subscribers" ToRole="Tips" />
+    <NavigationProperty Name="Tip" Relationship="Self.FK__Subscribe__Tips___6E01572D" FromRole="Subscribers" ToRole="Tips" />
   </EntityType>
   <EntityType Name="Tip">
     <Key>
@@ -109,7 +112,7 @@
     <Property Name="Image_Path" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="Tips" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="food_apparels_cloth_recycle_tips" Relationship="Self.tips_ts" FromRole="Tips" ToRole="food_apparels_cloth_recycle_tips" />
-    <NavigationProperty Name="Subscribers" Relationship="Self.FK__Subscribe__Tips___47DBAE45" FromRole="Tips" ToRole="Subscribers" />
+    <NavigationProperty Name="Subscribers" Relationship="Self.FK__Subscribe__Tips___6E01572D" FromRole="Tips" ToRole="Subscribers" />
   </EntityType>
   <Association Name="apparels_ts">
     <End Role="Apparels" Type="Self.Apparel" Multiplicity="1" />
@@ -123,7 +126,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Apparels__Catego__3B75D760">
+  <Association Name="FK__Apparels__Catego__619B8048">
     <End Role="Categories" Type="Self.Category" Multiplicity="1" />
     <End Role="Apparels" Type="Self.Apparel" Multiplicity="*" />
     <ReferentialConstraint>
@@ -135,7 +138,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Cloth_Var__Categ__3E52440B">
+  <Association Name="FK__Cloth_Var__Categ__6477ECF3">
     <End Role="Categories" Type="Self.Category" Multiplicity="1" />
     <End Role="Cloth_Varieties" Type="Self.Cloth_Varieties" Multiplicity="*" />
     <ReferentialConstraint>
@@ -147,7 +150,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Foods__Category___38996AB5">
+  <Association Name="FK__Foods__Category___5EBF139D">
     <End Role="Categories" Type="Self.Category" Multiplicity="1" />
     <End Role="Foods" Type="Self.Food" Multiplicity="*" />
     <ReferentialConstraint>
@@ -159,7 +162,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Recycle__Categor__412EB0B6">
+  <Association Name="FK__Recycle__Categor__6754599E">
     <End Role="Categories" Type="Self.Category" Multiplicity="1" />
     <End Role="Recycle" Type="Self.Recycle" Multiplicity="*" />
     <ReferentialConstraint>
@@ -219,7 +222,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Subscribe__Tips___47DBAE45">
+  <Association Name="FK__Subscribe__Tips___6E01572D">
     <End Role="Tips" Type="Self.Tip" Multiplicity="1" />
     <End Role="Subscribers" Type="Self.Subscriber" Multiplicity="*" />
     <ReferentialConstraint>
@@ -231,7 +234,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="FootPrintOneEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="FootPrintOneEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Apparels" EntityType="Self.Apparel" />
     <EntitySet Name="Categories" EntityType="Self.Category" />
     <EntitySet Name="Cloth_Varieties" EntityType="Self.Cloth_Varieties" />
@@ -244,19 +247,19 @@
       <End Role="Apparels" EntitySet="Apparels" />
       <End Role="food_apparels_cloth_recycle_tips" EntitySet="food_apparels_cloth_recycle_tips" />
     </AssociationSet>
-    <AssociationSet Name="FK__Apparels__Catego__3B75D760" Association="Self.FK__Apparels__Catego__3B75D760">
+    <AssociationSet Name="FK__Apparels__Catego__619B8048" Association="Self.FK__Apparels__Catego__619B8048">
       <End Role="Categories" EntitySet="Categories" />
       <End Role="Apparels" EntitySet="Apparels" />
     </AssociationSet>
-    <AssociationSet Name="FK__Cloth_Var__Categ__3E52440B" Association="Self.FK__Cloth_Var__Categ__3E52440B">
+    <AssociationSet Name="FK__Cloth_Var__Categ__6477ECF3" Association="Self.FK__Cloth_Var__Categ__6477ECF3">
       <End Role="Categories" EntitySet="Categories" />
       <End Role="Cloth_Varieties" EntitySet="Cloth_Varieties" />
     </AssociationSet>
-    <AssociationSet Name="FK__Foods__Category___38996AB5" Association="Self.FK__Foods__Category___38996AB5">
+    <AssociationSet Name="FK__Foods__Category___5EBF139D" Association="Self.FK__Foods__Category___5EBF139D">
       <End Role="Categories" EntitySet="Categories" />
       <End Role="Foods" EntitySet="Foods" />
     </AssociationSet>
-    <AssociationSet Name="FK__Recycle__Categor__412EB0B6" Association="Self.FK__Recycle__Categor__412EB0B6">
+    <AssociationSet Name="FK__Recycle__Categor__6754599E" Association="Self.FK__Recycle__Categor__6754599E">
       <End Role="Categories" EntitySet="Categories" />
       <End Role="Recycle" EntitySet="Recycles" />
     </AssociationSet>
@@ -276,7 +279,7 @@
       <End Role="Tips" EntitySet="Tips" />
       <End Role="food_apparels_cloth_recycle_tips" EntitySet="food_apparels_cloth_recycle_tips" />
     </AssociationSet>
-    <AssociationSet Name="FK__Subscribe__Tips___47DBAE45" Association="Self.FK__Subscribe__Tips___47DBAE45">
+    <AssociationSet Name="FK__Subscribe__Tips___6E01572D" Association="Self.FK__Subscribe__Tips___6E01572D">
       <End Role="Tips" EntitySet="Tips" />
       <End Role="Subscribers" EntitySet="Subscribers" />
     </AssociationSet>

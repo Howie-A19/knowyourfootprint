@@ -7,18 +7,83 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CarbonFootPrint.Models;
+using CarbonFootPrint.Utils;
 
 namespace CarbonFootPrint.Controllers
 {
     public class FoodsController : Controller
     {
-        private FootPrintOneEntities1 db = new FootPrintOneEntities1();
+        private FootPrintOneEntities db = new FootPrintOneEntities();
 
         // GET: Foods
         public ActionResult Index()
         {
             var foods = db.Foods.Include(f => f.Category1);
             return View(foods.ToList());
+        }
+
+
+        public ActionResult FoodMain()
+        {
+
+
+           ViewBag.Category= new SelectList(db.Foods, "Category", "Category");
+
+
+            var Values = new List<String> { "1-2 times a week" , "3-4 times a week" , "more than 5 days" };
+            var aList = Values.Select((x, i) => new { Value = x, Data = x }).ToList();
+            ViewBag.ViewFrequencyList = new SelectList(aList, "Value", "Data");
+
+            var nutritionValues = new List<String> { "Protein per gm", "Energy per Calories"};
+            var nList = nutritionValues.Select((x, i) => new { Value = x, Data = x }).ToList();
+            ViewBag.ViewNutritionList = new SelectList(nList, "Value", "Data");
+
+            // ViewBag.ViewFrequencyList = frequencyList;
+
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult FoodMain(Food food)
+        {
+            String category = food.Category;
+            String freq = food.frequency;
+            String nutrition = food.nutrition;
+
+            float carbonValue = 0;
+            FoodCalculate foodCalc = new FoodCalculate();
+            var tempFood = db.Foods.Where(c => c.Category== category.Trim()).Include(b => b.Category1).ToList();
+            Food foodOne = tempFood[0];
+
+
+            if(food.frequency != null)
+            {
+                carbonValue = foodCalc.calCarbonUsingFoodFrequency(food.frequency, foodOne);
+            }
+            if(nutrition != null)
+            {
+                carbonValue = foodCalc.calCarbonUsingNutrition(food.nutrition, food.input, foodOne);
+            }
+
+            ViewBag.carbonValue = carbonValue+ " kg of CO2";
+
+            ViewBag.Category = new SelectList(db.Foods, "Category", "Category");
+
+
+            var Values = new List<String> { "1-2 times a week", "3-4 times a week", "more than 5 days" };
+            var aList = Values.Select((x, i) => new { Value = x, Data = x }).ToList();
+            ViewBag.ViewFrequencyList = new SelectList(aList, "Value", "Data");
+
+            var nutritionValues = new List<String> { "Protein per gm", "Energy per Calories" };
+            var nList = nutritionValues.Select((x, i) => new { Value = x, Data = x }).ToList();
+            ViewBag.ViewNutritionList = new SelectList(nList, "Value", "Data");
+
+
+
+
+            return View();
+
         }
 
         // GET: Foods/Details/5
@@ -48,7 +113,7 @@ namespace CarbonFootPrint.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Category,Energy,Avg_Carbon_Footprint,Image_Path,Suggestions,Category_Id")] Food food)
+        public ActionResult Create([Bind(Include = "Id,Category,Energy_PER_100gm,PER_SERVING_gm,E1_ACFP_PER_100gm,PROTEIN_PER_100gm,E2_ACFP_PROTEIN_PER_100gm,E3_ACFP_ENERGY_PER_100KCAL,Image_Path,Suggestions,Category_Id")] Food food)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +147,7 @@ namespace CarbonFootPrint.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Category,Energy,Avg_Carbon_Footprint,Image_Path,Suggestions,Category_Id")] Food food)
+        public ActionResult Edit([Bind(Include = "Id,Category,Energy_PER_100gm,PER_SERVING_gm,E1_ACFP_PER_100gm,PROTEIN_PER_100gm,E2_ACFP_PROTEIN_PER_100gm,E3_ACFP_ENERGY_PER_100KCAL,Image_Path,Suggestions,Category_Id")] Food food)
         {
             if (ModelState.IsValid)
             {

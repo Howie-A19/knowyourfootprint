@@ -4,25 +4,25 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9e3ef3be26ec44f48c35eb8d53d9f272" Name="Diagram1">
+      <Diagram DiagramId="e0a447408c2d476faafba8c9ed5a9041" Name="Diagram1">
         <EntityTypeShape EntityType="FootPrintOneModel.Apparel" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FootPrintOneModel.Category" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootPrintOneModel.Category" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FootPrintOneModel.Cloth_Varieties" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="FootPrintOneModel.food_apparels_cloth_recycle_tips" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="FootPrintOneModel.Food" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FootPrintOneModel.Recycle" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="FootPrintOneModel.Subscriber" Width="1.5" PointX="5.25" PointY="17.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="FootPrintOneModel.Tip" Width="1.5" PointX="3" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootPrintOneModel.food_apparels_cloth_recycle_tips" Width="1.5" PointX="5.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootPrintOneModel.Food" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootPrintOneModel.Recycle" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootPrintOneModel.Subscriber" Width="1.5" PointX="5.25" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootPrintOneModel.Tip" Width="1.5" PointX="3" PointY="17.625" IsExpanded="true" />
         <AssociationConnector Association="FootPrintOneModel.apparels_ts" ManuallyRouted="false" />
-        <AssociationConnector Association="FootPrintOneModel.FK__Apparels__Catego__3B75D760" ManuallyRouted="false" />
-        <AssociationConnector Association="FootPrintOneModel.FK__Cloth_Var__Categ__3E52440B" ManuallyRouted="false" />
-        <AssociationConnector Association="FootPrintOneModel.FK__Foods__Category___38996AB5" ManuallyRouted="false" />
-        <AssociationConnector Association="FootPrintOneModel.FK__Recycle__Categor__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="FootPrintOneModel.FK__Apparels__Catego__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="FootPrintOneModel.FK__Cloth_Var__Categ__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="FootPrintOneModel.FK__Foods__Category___5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="FootPrintOneModel.FK__Recycle__Categor__6754599E" ManuallyRouted="false" />
         <AssociationConnector Association="FootPrintOneModel.clothvarieties_ts" ManuallyRouted="false" />
         <AssociationConnector Association="FootPrintOneModel.food_ts" ManuallyRouted="false" />
         <AssociationConnector Association="FootPrintOneModel.recycle_ts" ManuallyRouted="false" />
         <AssociationConnector Association="FootPrintOneModel.tips_ts" ManuallyRouted="false" />
-        <AssociationConnector Association="FootPrintOneModel.FK__Subscribe__Tips___47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="FootPrintOneModel.FK__Subscribe__Tips___6E01572D" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
