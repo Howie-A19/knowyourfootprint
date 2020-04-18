@@ -13,7 +13,7 @@ namespace CarbonFootPrint.Controllers
 {
     public class FoodsController : Controller
     {
-        private FootPrintOneEntities db = new FootPrintOneEntities();
+        private FootPrintOneEntities1 db = new FootPrintOneEntities1();
 
         // GET: Foods
         public ActionResult Index()

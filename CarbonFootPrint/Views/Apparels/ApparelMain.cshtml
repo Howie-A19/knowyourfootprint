@@ -1,0 +1,197 @@
+﻿@model CarbonFootPrint.Models.Apparel_List
+
+<!DOCTYPE html>
+@{
+    ViewBag.Title = "ClothMain";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <style>
+        body {
+            background-image: url("/Content/images/ApparelCoverPic.jpg");
+            background-position:left;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .Output{
+             
+  border: 1px solid black;
+  background-color: lightblue;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
+        
+    
+        h2, h3, Label {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <br /><br />
+
+    <h2 style="text-align:center; color:white">Apparel Carbon Calculator</h2> <br />
+    <p style="text-align:center; color:white">Tell us your apparels and find the impact of your apparels consumptions on the climate change</p> <br />
+    
+    @using (Html.BeginForm("ApparelMain", "Apparels", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="row">
+            <div class="col-12 col-md-8">
+
+                <table class="table" border="1" style="border-color:white">
+                    <tr>
+                        <td style="color:white">
+                            Apparel <i> (Select your items - max: 3 items)</i>
+                        </td>
+                        <td style="color:white">
+                            Quantity <i> (eg: 1,2,3...)</i>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.DropDownListFor(model => model.apparelOne, (SelectList)ViewBag.ApparelOne, "-select-")
+                            @Html.ValidationMessageFor(model => model.apparelOne, "", new { @class = "text-danger" })
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.quantityOne, new { htmlAttributes = new { @class = "form-control" } })
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.DropDownListFor(model => model.apparelTwo, (SelectList)ViewBag.ApparelTwo, "-select-")
+                            @Html.ValidationMessageFor(model => model.apparelOne, "", new { @class = "text-danger" })
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.quantityTwo, new { htmlAttributes = new { @class = "form-control" } })
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.DropDownListFor(model => model.apparelThree, (SelectList)ViewBag.ApparelThree, "-select-")
+                            @Html.ValidationMessageFor(model => model.apparelThree, "", new { @class = "text-danger" })
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.quantityThree, new { htmlAttributes = new { @class = "form-control" } })
+                        </td>
+                    </tr>
+                </table>
+
+
+                <div class="form-group" style="color:white">
+
+                    <table class="table">
+                        <tr>
+                            <td><i>Would you buy the apparels from the brands that is Eco-efficiency across supply chain?</i></td>
+                            <td>
+                                Yes
+                                @Html.RadioButtonFor(model => model.optionOne, "Yes") &nbsp; &nbsp;
+                                No
+                                @Html.RadioButtonFor(model => model.optionOne, "No", new { Checked = "checked" })
+                            </td>
+
+
+                        </tr>
+
+                        <tr>
+                            <td><i>Would you buy the apparels that are design for durability??</i></td>
+
+                            <td>
+                                Yes
+                                @Html.RadioButtonFor(model => model.optionTwo, "Yes") &nbsp; &nbsp;
+                                No
+                                @Html.RadioButtonFor(model => model.optionTwo, "No", new { Checked = "checked" })
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td><i>Would you clean clothing less frequency?</i></td>
+                            <td>
+                                Yes
+                                @Html.RadioButtonFor(model => model.optionThree, "Yes") &nbsp; &nbsp;
+                                No
+                                @Html.RadioButtonFor(model => model.optionThree, "No", new { Checked = "checked" })
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><i>Would you wash your clothes at lower temperature (around room temp)?</i></td>
+                            <td>
+                                Yes
+                                @Html.RadioButtonFor(model => model.optionFour, "Yes") &nbsp; &nbsp;
+                                No
+                                @Html.RadioButtonFor(model => model.optionFour, "No", new { Checked = "checked" })
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><i>Would you increase the size of washing/drying load?</i></td>
+                            <td>
+                                Yes
+                                @Html.RadioButtonFor(model => model.optionFive, "Yes") &nbsp; &nbsp;
+                                No
+                                @Html.RadioButtonFor(model => model.optionFive, "No", new { Checked = "checked" })
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td><i>Would you dispose less and reuse more?</i></td>
+                            <td>
+                                Yes
+                                @Html.RadioButtonFor(model => model.optionSix, "Yes") &nbsp; &nbsp;
+                                No
+                                @Html.RadioButtonFor(model => model.optionSix, "No", new { Checked = "checked" })
+                            </td>
+                        </tr>
+
+                    </table>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Calculate Your footprint" class="btn btn-default" />
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-6 col-md-4">
+
+
+                @if (ViewBag.totalCFP != null)
+                {
+                    <div class="Output">
+
+                        <h4 style="color:white">Your CO2 Emission is: </h4>
+                        <p style="color:white"> @ViewBag.totalCFP</p>
+                    </div>
+                }
+
+                @if (ViewBag.finalCFP != null)
+                {
+                    <div class="Output">
+
+                        <h4 style="color:white">Your Reduced CO2 Emission is: </h4>
+                        <p style="color:white"> @ViewBag.finalCFP</p>
+                    </div>
+                }
+
+
+
+
+            </div>
+        </div>
+    }
+
+
+</body>
+</html>

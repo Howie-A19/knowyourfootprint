@@ -22,17 +22,34 @@ namespace CarbonFootPrint.Models
     
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Material_One { get; set; }
-        public string Material_Two { get; set; }
-        public Nullable<float> Materail_One_Usage { get; set; }
-        public Nullable<float> Material_Two_Usage { get; set; }
-        public float Total_Carbon_Footprint { get; set; }
+        public float Avg_Carbon_Footprint { get; set; }
         public string Image_Path { get; set; }
         public string Suggestions { get; set; }
         public int Category_Id { get; set; }
-    
+
+     
+
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<food_apparels_cloth_recycle_tips> food_apparels_cloth_recycle_tips { get; set; }
         public virtual Category Category { get; set; }
+    }
+
+    public class Apparel_List
+    {
+        public float quantityOne { get; set; }
+        public float quantityTwo { get; set; }
+        public float quantityThree { get; set; }
+
+        public String apparelOne { get; set; }
+        public String apparelTwo { get; set; }
+        public String apparelThree { get; set; }
+
+        public String optionOne { get; set; }
+        public String optionTwo { get; set; }
+        public String optionThree { get; set; }
+        public String optionFour { get; set; }
+        public String optionFive { get; set; }
+        public String optionSix { get; set; }
     }
 }

@@ -16,12 +16,10 @@ namespace CarbonFootPrint.Models
     {
         public int foods_id { get; set; }
         public int apparels_id { get; set; }
-        public int clothvarieties_id { get; set; }
         public int recycle_id { get; set; }
         public int tips_id { get; set; }
     
         public virtual Apparel Apparel { get; set; }
-        public virtual Cloth_Varieties Cloth_Varieties { get; set; }
         public virtual Food Food { get; set; }
         public virtual Recycle Recycle { get; set; }
         public virtual Tip Tip { get; set; }

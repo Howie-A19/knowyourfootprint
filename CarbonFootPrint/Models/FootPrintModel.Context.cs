@@ -13,10 +13,10 @@ namespace CarbonFootPrint.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FootPrintOneEntities : DbContext
+    public partial class FootPrintOneEntities1 : DbContext
     {
-        public FootPrintOneEntities()
-            : base("name=FootPrintOneEntities")
+        public FootPrintOneEntities1()
+            : base("name=FootPrintOneEntities1")
         {
         }
     
@@ -27,7 +27,6 @@ namespace CarbonFootPrint.Models
     
         public virtual DbSet<Apparel> Apparels { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<Cloth_Varieties> Cloth_Varieties { get; set; }
         public virtual DbSet<food_apparels_cloth_recycle_tips> food_apparels_cloth_recycle_tips { get; set; }
         public virtual DbSet<Food> Foods { get; set; }
         public virtual DbSet<Recycle> Recycles { get; set; }

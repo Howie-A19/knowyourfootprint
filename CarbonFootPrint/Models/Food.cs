@@ -32,10 +32,9 @@ namespace CarbonFootPrint.Models
         public string Suggestions { get; set; }
         public int Category_Id { get; set; }
 
-        public int input { get; set; }
-        public String frequency { get; set; }
-
         public String nutrition { get; set; }
+        public String frequency { get; set; }
+        public float input { get; set; }
     
         public virtual Category Category1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

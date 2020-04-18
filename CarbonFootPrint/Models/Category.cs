@@ -18,7 +18,6 @@ namespace CarbonFootPrint.Models
         public Category()
         {
             this.Apparels = new HashSet<Apparel>();
-            this.Cloth_Varieties = new HashSet<Cloth_Varieties>();
             this.Foods = new HashSet<Food>();
             this.Recycles = new HashSet<Recycle>();
         }
@@ -28,8 +27,6 @@ namespace CarbonFootPrint.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Apparel> Apparels { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cloth_Varieties> Cloth_Varieties { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Food> Foods { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
