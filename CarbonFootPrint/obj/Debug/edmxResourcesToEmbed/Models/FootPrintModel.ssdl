@@ -6,11 +6,7 @@
     </Key>
     <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Material_One" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Material_Two" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Materail_One_Usage" Type="real" />
-    <Property Name="Material_Two_Usage" Type="real" />
-    <Property Name="Total_Carbon_Footprint" Type="real" Nullable="false" />
+    <Property Name="Avg_Carbon_Footprint" Type="real" Nullable="false" />
     <Property Name="Image_Path" Type="varchar" MaxLength="100" />
     <Property Name="Suggestions" Type="nvarchar(max)" />
     <Property Name="Category_Id" Type="int" Nullable="false" />
@@ -22,28 +18,15 @@
     <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="Kind" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
-  <EntityType Name="Cloth_Varieties">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" Nullable="false" />
-    <Property Name="Material" Type="nvarchar" MaxLength="1" Nullable="false" />
-    <Property Name="Avg_Carbon_Footprint" Type="real" Nullable="false" />
-    <Property Name="Image_Path" Type="varchar" MaxLength="100" />
-    <Property Name="Suggestions" Type="nvarchar(max)" />
-    <Property Name="Category_Id" Type="int" Nullable="false" />
-  </EntityType>
   <EntityType Name="food_apparels_cloth_recycle_tips">
     <Key>
       <PropertyRef Name="foods_id" />
       <PropertyRef Name="apparels_id" />
-      <PropertyRef Name="clothvarieties_id" />
       <PropertyRef Name="recycle_id" />
       <PropertyRef Name="tips_id" />
     </Key>
     <Property Name="foods_id" Type="int" Nullable="false" />
     <Property Name="apparels_id" Type="int" Nullable="false" />
-    <Property Name="clothvarieties_id" Type="int" Nullable="false" />
     <Property Name="recycle_id" Type="int" Nullable="false" />
     <Property Name="tips_id" Type="int" Nullable="false" />
   </EntityType>
@@ -106,19 +89,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="clothvarieties_ts">
-    <End Role="Cloth_Varieties" Type="Self.Cloth_Varieties" Multiplicity="1" />
-    <End Role="food_apparels_cloth_recycle_tips" Type="Self.food_apparels_cloth_recycle_tips" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Cloth_Varieties">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="food_apparels_cloth_recycle_tips">
-        <PropertyRef Name="clothvarieties_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Apparels__Catego__619B8048">
+  <Association Name="FK__Apparels__Catego__07C12930">
     <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
     <End Role="Apparels" Type="Self.Apparels" Multiplicity="*" />
     <ReferentialConstraint>
@@ -130,19 +101,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Cloth_Var__Categ__6477ECF3">
-    <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
-    <End Role="Cloth_Varieties" Type="Self.Cloth_Varieties" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Categories">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Cloth_Varieties">
-        <PropertyRef Name="Category_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Foods__Category___5EBF139D">
+  <Association Name="FK__Foods__Category___04E4BC85">
     <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
     <End Role="Foods" Type="Self.Foods" Multiplicity="*" />
     <ReferentialConstraint>
@@ -154,7 +113,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Recycle__Categor__6754599E">
+  <Association Name="FK__Recycle__Categor__0A9D95DB">
     <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
     <End Role="Recycle" Type="Self.Recycle" Multiplicity="*" />
     <ReferentialConstraint>
@@ -166,7 +125,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Subscribe__Tips___6E01572D">
+  <Association Name="FK__Subscribe__Tips___114A936A">
     <End Role="Tips" Type="Self.Tips" Multiplicity="1" />
     <End Role="Subscribers" Type="Self.Subscribers" Multiplicity="*" />
     <ReferentialConstraint>
@@ -217,7 +176,6 @@
   <EntityContainer Name="FootPrintOneModelStoreContainer">
     <EntitySet Name="Apparels" EntityType="Self.Apparels" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Cloth_Varieties" EntityType="Self.Cloth_Varieties" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="food_apparels_cloth_recycle_tips" EntityType="Self.food_apparels_cloth_recycle_tips" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Foods" EntityType="Self.Foods" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Recycle" EntityType="Self.Recycle" Schema="dbo" store:Type="Tables" />
@@ -227,27 +185,19 @@
       <End Role="Apparels" EntitySet="Apparels" />
       <End Role="food_apparels_cloth_recycle_tips" EntitySet="food_apparels_cloth_recycle_tips" />
     </AssociationSet>
-    <AssociationSet Name="clothvarieties_ts" Association="Self.clothvarieties_ts">
-      <End Role="Cloth_Varieties" EntitySet="Cloth_Varieties" />
-      <End Role="food_apparels_cloth_recycle_tips" EntitySet="food_apparels_cloth_recycle_tips" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Apparels__Catego__619B8048" Association="Self.FK__Apparels__Catego__619B8048">
+    <AssociationSet Name="FK__Apparels__Catego__07C12930" Association="Self.FK__Apparels__Catego__07C12930">
       <End Role="Categories" EntitySet="Categories" />
       <End Role="Apparels" EntitySet="Apparels" />
     </AssociationSet>
-    <AssociationSet Name="FK__Cloth_Var__Categ__6477ECF3" Association="Self.FK__Cloth_Var__Categ__6477ECF3">
-      <End Role="Categories" EntitySet="Categories" />
-      <End Role="Cloth_Varieties" EntitySet="Cloth_Varieties" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Foods__Category___5EBF139D" Association="Self.FK__Foods__Category___5EBF139D">
+    <AssociationSet Name="FK__Foods__Category___04E4BC85" Association="Self.FK__Foods__Category___04E4BC85">
       <End Role="Categories" EntitySet="Categories" />
       <End Role="Foods" EntitySet="Foods" />
     </AssociationSet>
-    <AssociationSet Name="FK__Recycle__Categor__6754599E" Association="Self.FK__Recycle__Categor__6754599E">
+    <AssociationSet Name="FK__Recycle__Categor__0A9D95DB" Association="Self.FK__Recycle__Categor__0A9D95DB">
       <End Role="Categories" EntitySet="Categories" />
       <End Role="Recycle" EntitySet="Recycle" />
     </AssociationSet>
-    <AssociationSet Name="FK__Subscribe__Tips___6E01572D" Association="Self.FK__Subscribe__Tips___6E01572D">
+    <AssociationSet Name="FK__Subscribe__Tips___114A936A" Association="Self.FK__Subscribe__Tips___114A936A">
       <End Role="Tips" EntitySet="Tips" />
       <End Role="Subscribers" EntitySet="Subscribers" />
     </AssociationSet>

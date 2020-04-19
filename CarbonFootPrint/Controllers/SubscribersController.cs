@@ -12,7 +12,7 @@ namespace CarbonFootPrint.Controllers
 {
     public class SubscribersController : Controller
     {
-        private FootPrintOneEntities db = new FootPrintOneEntities();
+        private FootPrintOneEntities1 db = new FootPrintOneEntities1();
 
         // GET: Subscribers
         public ActionResult Index()
