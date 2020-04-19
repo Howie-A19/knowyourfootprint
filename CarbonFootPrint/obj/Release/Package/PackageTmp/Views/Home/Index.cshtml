@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    @*<link href="~/Content/css/main.css" rel="stylesheet" />*@
+
+    @Styles.Render("~/Content/css")
+ <style>
+     body {
+    background-image: url("/Content/images/coverPic.jpg");
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ </style>
+
+</head>
+<body class="ma-header">
+
+    <br /><br /><br /><br />
+    <div class="text-center">
+        <h4>
+            <a href="@Url.Action("_SubscriberPartial", "Subscribers")">Subscribe yourself to get the latest update?</a>
+        </h4>
+    </div>
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <div id="content">
+        <div id="left">
+            <h2 style="color:white;font-style:italic" align="left">Students towards net zero Carbon Emissions</h2>
+
+            <p style="color:white;font-style:italic" align="left">
+                check Carbon Emissions from your daily lifestyle activities and
+                learn exciting & engaging ways to adapt to a sustainable and
+                greener lifestyle
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>

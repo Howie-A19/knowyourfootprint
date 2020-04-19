@@ -1,0 +1,35 @@
+﻿@model CarbonFootPrint.Models.Subscriber
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Subscriber</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Mail_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mail_Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tip.Tips_Kind)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tip.Tips_Kind)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

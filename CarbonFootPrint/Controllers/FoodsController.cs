@@ -53,18 +53,25 @@ namespace CarbonFootPrint.Controllers
 
             float carbonValue = 0;
             FoodCalculate foodCalc = new FoodCalculate();
-            var tempFood = db.Foods.Where(c => c.Category== category.Trim()).Include(b => b.Category1).ToList();
-            Food foodOne = tempFood[0];
+           // var tempFood = db.Foods.Where(c => c.Category== category.Trim()).Include(b => b.Category1).ToList();
+           // Food foodOne = tempFood[0];
 
+            var tempFood = db.Foods.Where(c => c.Category == category.Trim()).FirstOrDefault();
+            Food foodOne = tempFood;
 
-            if(food.frequency != null)
+            if(foodOne != null)
             {
-                carbonValue = foodCalc.calCarbonUsingFoodFrequency(food.frequency, foodOne);
+                if (food.frequency != null)
+                {
+                    carbonValue = foodCalc.calCarbonUsingFoodFrequency(food.frequency, foodOne);
+                }
+                if (nutrition != null)
+                {
+                    carbonValue = foodCalc.calCarbonUsingNutrition(food.nutrition, food.input, foodOne);
+                }
             }
-            if(nutrition != null)
-            {
-                carbonValue = foodCalc.calCarbonUsingNutrition(food.nutrition, food.input, foodOne);
-            }
+
+           
 
             ViewBag.carbonValue = carbonValue+ " kg of CO2";
 

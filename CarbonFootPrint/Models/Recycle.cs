@@ -33,4 +33,16 @@ namespace CarbonFootPrint.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<food_apparels_cloth_recycle_tips> food_apparels_cloth_recycle_tips { get; set; }
     }
+
+    public class RecycleQuantity
+    {
+        public float glassQty { get; set; }
+        public float aluminiumQty { get; set; }
+        public float steelQty { get; set; }
+        public float plasticsQty { get; set; }
+        public float pcQty { get; set; }
+        public float owcQty { get; set; }
+        public float owdQty { get; set; }
+    }
+
 }

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FootPrintOneModelStoreContainer" CdmEntityContainer="FootPrintOneEntities1">
+    <EntitySetMapping Name="Apparels">
+      <EntityTypeMapping TypeName="FootPrintOneModel.Apparel">
+        <MappingFragment StoreEntitySet="Apparels">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Avg_Carbon_Footprint" ColumnName="Avg_Carbon_Footprint" />
+          <ScalarProperty Name="Image_Path" ColumnName="Image_Path" />
+          <ScalarProperty Name="Suggestions" ColumnName="Suggestions" />
+          <ScalarProperty Name="Category_Id" ColumnName="Category_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="FootPrintOneModel.Category">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Kind" ColumnName="Kind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="food_apparels_cloth_recycle_tips">
+      <EntityTypeMapping TypeName="FootPrintOneModel.food_apparels_cloth_recycle_tips">
+        <MappingFragment StoreEntitySet="food_apparels_cloth_recycle_tips">
+          <ScalarProperty Name="foods_id" ColumnName="foods_id" />
+          <ScalarProperty Name="apparels_id" ColumnName="apparels_id" />
+          <ScalarProperty Name="recycle_id" ColumnName="recycle_id" />
+          <ScalarProperty Name="tips_id" ColumnName="tips_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Foods">
+      <EntityTypeMapping TypeName="FootPrintOneModel.Food">
+        <MappingFragment StoreEntitySet="Foods">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Energy_PER_100gm" ColumnName="Energy_PER_100gm" />
+          <ScalarProperty Name="PER_SERVING_gm" ColumnName="PER_SERVING_gm" />
+          <ScalarProperty Name="E1_ACFP_PER_100gm" ColumnName="E1_ACFP_PER_100gm" />
+          <ScalarProperty Name="PROTEIN_PER_100gm" ColumnName="PROTEIN_PER_100gm" />
+          <ScalarProperty Name="E2_ACFP_PROTEIN_PER_100gm" ColumnName="E2_ACFP_PROTEIN_PER_100gm" />
+          <ScalarProperty Name="E3_ACFP_ENERGY_PER_100KCAL" ColumnName="E3_ACFP_ENERGY_PER_100KCAL" />
+          <ScalarProperty Name="Image_Path" ColumnName="Image_Path" />
+          <ScalarProperty Name="Suggestions" ColumnName="Suggestions" />
+          <ScalarProperty Name="Category_Id" ColumnName="Category_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recycles">
+      <EntityTypeMapping TypeName="FootPrintOneModel.Recycle">
+        <MappingFragment StoreEntitySet="Recycle">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Carbon_Footprint_Primary" ColumnName="Carbon_Footprint_Primary" />
+          <ScalarProperty Name="Carbon_Footprint_Secondary" ColumnName="Carbon_Footprint_Secondary" />
+          <ScalarProperty Name="Footprint_Differences" ColumnName="Footprint_Differences" />
+          <ScalarProperty Name="Image_Path" ColumnName="Image_Path" />
+          <ScalarProperty Name="Suggestions" ColumnName="Suggestions" />
+          <ScalarProperty Name="Category_Id" ColumnName="Category_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subscribers">
+      <EntityTypeMapping TypeName="FootPrintOneModel.Subscriber">
+        <MappingFragment StoreEntitySet="Subscribers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Mail_Id" ColumnName="Mail_Id" />
+          <ScalarProperty Name="Tips_Id" ColumnName="Tips_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tips">
+      <EntityTypeMapping TypeName="FootPrintOneModel.Tip">
+        <MappingFragment StoreEntitySet="Tips">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Tips_Kind" ColumnName="Tips_Kind" />
+          <ScalarProperty Name="Tips_Category" ColumnName="Tips_Category" />
+          <ScalarProperty Name="Image_Path" ColumnName="Image_Path" />
+          <ScalarProperty Name="Tips" ColumnName="Tips" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

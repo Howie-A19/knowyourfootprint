@@ -1,0 +1,75 @@
+﻿@model CarbonFootPrint.Models.Recycle
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Recycle</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Carbon_Footprint_Primary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Carbon_Footprint_Primary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Carbon_Footprint_Secondary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Carbon_Footprint_Secondary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Footprint_Differences)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Footprint_Differences)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image_Path)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image_Path)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Suggestions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Suggestions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.Kind)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Kind)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

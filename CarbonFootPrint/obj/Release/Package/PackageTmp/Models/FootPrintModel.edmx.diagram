@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b8ad026bf04a4dafaf91f63ad3753fba" Name="Diagram1">
+        <EntityTypeShape EntityType="FootPrintOneModel.Apparel" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootPrintOneModel.Category" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootPrintOneModel.food_apparels_cloth_recycle_tips" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootPrintOneModel.Food" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootPrintOneModel.Recycle" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootPrintOneModel.Subscriber" Width="1.5" PointX="5.25" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootPrintOneModel.Tip" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
+        <AssociationConnector Association="FootPrintOneModel.apparels_ts" ManuallyRouted="false" />
+        <AssociationConnector Association="FootPrintOneModel.FK__Apparels__Catego__07C12930" ManuallyRouted="false" />
+        <AssociationConnector Association="FootPrintOneModel.FK__Foods__Category___04E4BC85" ManuallyRouted="false" />
+        <AssociationConnector Association="FootPrintOneModel.FK__Recycle__Categor__0A9D95DB" ManuallyRouted="false" />
+        <AssociationConnector Association="FootPrintOneModel.food_ts" ManuallyRouted="false" />
+        <AssociationConnector Association="FootPrintOneModel.recycle_ts" ManuallyRouted="false" />
+        <AssociationConnector Association="FootPrintOneModel.tips_ts" ManuallyRouted="false" />
+        <AssociationConnector Association="FootPrintOneModel.FK__Subscribe__Tips___114A936A" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
