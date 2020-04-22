@@ -10,7 +10,7 @@ namespace CarbonFootPrint.Controllers
 {
     public class HomeController : Controller
     {
-        private FootPrintOneEntities1 db = new FootPrintOneEntities1();
+        private footprintdbEntities db = new footprintdbEntities();
         public ActionResult Index()
         {
             return View();

@@ -35,7 +35,7 @@ namespace CarbonFootPrint.Models
         public String nutrition { get; set; }
         public String frequency { get; set; }
         public float input { get; set; }
-    
+
         public virtual Category Category1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<food_apparels_cloth_recycle_tips> food_apparels_cloth_recycle_tips { get; set; }

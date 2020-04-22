@@ -4,22 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b8ad026bf04a4dafaf91f63ad3753fba" Name="Diagram1">
-        <EntityTypeShape EntityType="FootPrintOneModel.Apparel" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="FootPrintOneModel.Category" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="FootPrintOneModel.food_apparels_cloth_recycle_tips" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="FootPrintOneModel.Food" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="FootPrintOneModel.Recycle" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FootPrintOneModel.Subscriber" Width="1.5" PointX="5.25" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FootPrintOneModel.Tip" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
-        <AssociationConnector Association="FootPrintOneModel.apparels_ts" ManuallyRouted="false" />
-        <AssociationConnector Association="FootPrintOneModel.FK__Apparels__Catego__07C12930" ManuallyRouted="false" />
-        <AssociationConnector Association="FootPrintOneModel.FK__Foods__Category___04E4BC85" ManuallyRouted="false" />
-        <AssociationConnector Association="FootPrintOneModel.FK__Recycle__Categor__0A9D95DB" ManuallyRouted="false" />
-        <AssociationConnector Association="FootPrintOneModel.food_ts" ManuallyRouted="false" />
-        <AssociationConnector Association="FootPrintOneModel.recycle_ts" ManuallyRouted="false" />
-        <AssociationConnector Association="FootPrintOneModel.tips_ts" ManuallyRouted="false" />
-        <AssociationConnector Association="FootPrintOneModel.FK__Subscribe__Tips___114A936A" ManuallyRouted="false" />
+      <Diagram DiagramId="e19ba044e20c452cb8c7ce2b16eb8874" Name="Diagram1">
+        <EntityTypeShape EntityType="footprintdbModel.Apparel" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="footprintdbModel.Category" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="footprintdbModel.food_apparels_cloth_recycle_tips" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="footprintdbModel.Food" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="footprintdbModel.Recycle" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="footprintdbModel.Subscriber" Width="1.5" PointX="5.25" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="footprintdbModel.Tip" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
+        <AssociationConnector Association="footprintdbModel.apparels_ts" ManuallyRouted="false" />
+        <AssociationConnector Association="footprintdbModel.FK__Apparels__Catego__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="footprintdbModel.FK__Foods__Category___4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="footprintdbModel.FK__Recycle__Categor__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="footprintdbModel.food_ts" ManuallyRouted="false" />
+        <AssociationConnector Association="footprintdbModel.recycle_ts" ManuallyRouted="false" />
+        <AssociationConnector Association="footprintdbModel.tips_ts" ManuallyRouted="false" />
+        <AssociationConnector Association="footprintdbModel.FK__Subscribe__Tips___5812160E" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

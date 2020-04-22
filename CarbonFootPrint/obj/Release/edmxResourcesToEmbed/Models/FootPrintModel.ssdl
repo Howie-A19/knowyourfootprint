@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="FootPrintOneModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="footprintdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Apparels">
     <Key>
       <PropertyRef Name="Id" />
@@ -89,7 +89,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Apparels__Catego__07C12930">
+  <Association Name="FK__Apparels__Catego__4E88ABD4">
     <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
     <End Role="Apparels" Type="Self.Apparels" Multiplicity="*" />
     <ReferentialConstraint>
@@ -101,7 +101,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Foods__Category___04E4BC85">
+  <Association Name="FK__Foods__Category___4BAC3F29">
     <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
     <End Role="Foods" Type="Self.Foods" Multiplicity="*" />
     <ReferentialConstraint>
@@ -113,7 +113,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Recycle__Categor__0A9D95DB">
+  <Association Name="FK__Recycle__Categor__5165187F">
     <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
     <End Role="Recycle" Type="Self.Recycle" Multiplicity="*" />
     <ReferentialConstraint>
@@ -125,7 +125,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Subscribe__Tips___114A936A">
+  <Association Name="FK__Subscribe__Tips___5812160E">
     <End Role="Tips" Type="Self.Tips" Multiplicity="1" />
     <End Role="Subscribers" Type="Self.Subscribers" Multiplicity="*" />
     <ReferentialConstraint>
@@ -173,7 +173,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="FootPrintOneModelStoreContainer">
+  <EntityContainer Name="footprintdbModelStoreContainer">
     <EntitySet Name="Apparels" EntityType="Self.Apparels" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="food_apparels_cloth_recycle_tips" EntityType="Self.food_apparels_cloth_recycle_tips" Schema="dbo" store:Type="Tables" />
@@ -185,19 +185,19 @@
       <End Role="Apparels" EntitySet="Apparels" />
       <End Role="food_apparels_cloth_recycle_tips" EntitySet="food_apparels_cloth_recycle_tips" />
     </AssociationSet>
-    <AssociationSet Name="FK__Apparels__Catego__07C12930" Association="Self.FK__Apparels__Catego__07C12930">
+    <AssociationSet Name="FK__Apparels__Catego__4E88ABD4" Association="Self.FK__Apparels__Catego__4E88ABD4">
       <End Role="Categories" EntitySet="Categories" />
       <End Role="Apparels" EntitySet="Apparels" />
     </AssociationSet>
-    <AssociationSet Name="FK__Foods__Category___04E4BC85" Association="Self.FK__Foods__Category___04E4BC85">
+    <AssociationSet Name="FK__Foods__Category___4BAC3F29" Association="Self.FK__Foods__Category___4BAC3F29">
       <End Role="Categories" EntitySet="Categories" />
       <End Role="Foods" EntitySet="Foods" />
     </AssociationSet>
-    <AssociationSet Name="FK__Recycle__Categor__0A9D95DB" Association="Self.FK__Recycle__Categor__0A9D95DB">
+    <AssociationSet Name="FK__Recycle__Categor__5165187F" Association="Self.FK__Recycle__Categor__5165187F">
       <End Role="Categories" EntitySet="Categories" />
       <End Role="Recycle" EntitySet="Recycle" />
     </AssociationSet>
-    <AssociationSet Name="FK__Subscribe__Tips___114A936A" Association="Self.FK__Subscribe__Tips___114A936A">
+    <AssociationSet Name="FK__Subscribe__Tips___5812160E" Association="Self.FK__Subscribe__Tips___5812160E">
       <End Role="Tips" EntitySet="Tips" />
       <End Role="Subscribers" EntitySet="Subscribers" />
     </AssociationSet>

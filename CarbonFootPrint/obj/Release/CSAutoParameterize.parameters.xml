@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="FootPrintOneEntities1-Web.config Connection String" description="FootPrintOneEntities1 Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.FootPrintModel.csdl|res://*/Models.FootPrintModel.ssdl|res://*/Models.FootPrintModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\FootPrintOne.mdf;integrated security=True;multipleactiveresultsets=True;application name=EntityFramework&quot;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="F:\\Monash\\4thSem\\IE\ 1\\Code\\CarbonFootPrint\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='FootPrintOneEntities1']/@connectionString" />
+  <parameter name="footprintdbEntities-Web.config Connection String" description="footprintdbEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.footprintmodel.csdl|res://*/Models.footprintmodel.ssdl|res://*/Models.footprintmodel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=footprintdbserver.database.windows.net;initial catalog=footprintdb;persist security info=True;user id=footprint;password=Carbon@123;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="F:\\Monash\\4thSem\\IE\ 1\\Code\\CarbonFootPrint\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='footprintdbEntities']/@connectionString" />
   </parameter>
 </parameters>

@@ -8,7 +8,7 @@ namespace CarbonFootPrint.Utils
 {
     public class ApparelCalculate
     {
-        private FootPrintOneEntities1 db = new FootPrintOneEntities1();
+        private footprintdbEntities db = new footprintdbEntities();
 
         public float generalApparelCalculate(String apparelName, float quantity)
         {
