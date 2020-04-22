@@ -23,10 +23,10 @@ namespace CarbonFootPrint
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/bootstrap.min.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/css/theme").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
-                      "~/Content/css/main.css"));
+                      "~/Content/main.css"));
         }
     }
 }

@@ -1,126 +1,127 @@
 ﻿@model CarbonFootPrint.Models.Subscriber
 
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /*body {
+            background-image: url("/Content/images/coverPic.jpg");
+            background-position:left;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }*/
+        </style>
+</head>
+<body style="background-color:blanchedalmond">
+    <div class="form-horizontal">
 
-
-    <div class="row">
-        <div class="col-6 col-md-4" id="text-color">
-            <h3>Do you want to keep yourself Healthy?</h3>
-            <h4 style="font-style:italic">Here are some interesting facts:</h4>
-            <div>
-                <p> <img src="~/Content/images/SubscriberSalmon.jpg" width="60" height="60" alt="Cover Pic" align="left"> Avoid most farmed salmon when eating, because the content of toxic PCBs is higher than wild salmon</p>
-            </div>
-            <br />
-            <div>
-                <p><img src="~/Content/images/SubscriberOrange.jpg" width="60" height="60" alt="Cover Pic" align="left"> Bananas and Oranges are the fruits with low blood sugar, highlt nutritious with fibre</p>
-            </div>
-            <br /> <br/>
-            <div>
-                <p> <img src="~/Content/images/SubscriberVegetables.jpg" width="60" height="60" alt="Cover Pic" align="left"> The carbon footprint of a vegetarian diet is about half that of a meat lover ’s diet.</p>
-            </div>
-            @*<h3 style="font-style:italic; text-align:center">for further updates - subscribe yourself</h3>*@
-            <br /><hr />
-
-                  <h3 style="font-style:italic">Do you want to know latest trends with less carbon emission?</h3> <br/>
-            
-            <div>
-                <p>
-                    <img src="~/Content/images/SubscriberNylon.jpg" width="60" height="60" alt="Cover Pic" align="left"> Reduce using <b>Nylon</b>
-                    cloth materials as synthetic fiber emits much more carbon dioxide than the production of natural fiber cotton
-                </p>
-            </div> <br/>
-
-
-
-
-        </div>
-
-
-        <div class="col-6 col-md-4">
-            @using (Html.BeginForm())
-            {
-                @Html.AntiForgeryToken()
-
-                if (ViewBag.Result != null)
-                {
-                    <div class="alert alert-info">@ViewBag.Result</div>
-                }
-
-                <div class="form-horizontal">
-
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" }) <br/> <br/>
-                   <h4 style="font-style:italic;color:white;text-align:center"> To get more tips- Subscribe your mail-id</h4>
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Mail_Id, "email:", htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Mail_Id, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Mail_Id, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Tips_Id, "Category:", htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.DropDownList("Tips_Id", null, htmlAttributes: new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.Tips_Id, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="subscribe here!" class="btn btn-default" style="color:white;background-color:grey;margin-left:auto;margin-right:auto;display:block;margin-top:auto;margin-bottom:0%" />
-                        </div>
-                    </div>
+        <div class="row" style="background-color:lightgray" >
+            <div class="col-6 col-md-4" >
+                <h3>Do you want to keep yourself Healthy?</h3>
+                <h4 style="font-style:italic">Here are some interesting facts:</h4>
+                <div class="form-group">
+                    <p> <img src="~/Content/images/SubscriberSalmon.jpg" width="100" height="100" alt="Cover Pic" align="left"> Avoid most farmed salmon when eating, because the content of toxic PCBs is higher than wild salmon</p>
                 </div>
-            }
-            <br /><br />
-            <hr />
+                <br /><br /><br /> <br />
+                <div class="form-group">
+                    <p><img src="~/Content/images/SubscriberOrange.jpg" width="100" height="100" alt="Cover Pic" align="left"> Bananas and Oranges are the fruits with low blood sugar, highlt nutritious with fibre</p>
+                </div>
+                <br /> <br /><br /><br /> <br />
+                <div class="form-group">
+                    <p> <img src="~/Content/images/SubscriberVegetables.jpg" width="100" height="100" alt="Cover Pic" align="left"> The carbon footprint of a vegetarian diet is about half that of a meat lover ’s diet.</p>
+                </div>
+                @*<h3 style="font-style:italic; text-align:center">for further updates - subscribe yourself</h3>*@
+                <br /><hr />
 
-            <br/><br/> <br/><br/><br/>
-            <div style="color:white">
-                <p>
-                    <img src="~/Content/images/SubscriberHemp.jpg" width="100" height="100" alt="Cover Pic" align="left">
-                    Hemp cloth meterial is the latest trend introduced as it has a 50% less ecological impact than cotton cloth
-                </p>
             </div>
-            <br />
 
 
+            <div class="col-6 col-md-4">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
 
-        </div>
+                    if (ViewBag.Result != null)
+                    {
+                        <div class="alert alert-info">@ViewBag.Result</div>
+                    }
 
-        <div class="col-6 col-md-4" id="text-color">
+                    <div class="form-horizontal">
 
-            <h3>Do you want to Save your Carbon footprint</h3>
-            <h4 style="font-style:italic">Recycle your products - It keeps you environmentally-friendly </h4> <br />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" }) <br /> <br />
+                        <h4 style="font-style:italic;color:white;text-align:center"> To get more tips- Subscribe your mail-id</h4>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Mail_Id, "email:", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Mail_Id, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Mail_Id, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
-            <div style="color:white">
-                <p>
-                    <img src="~/Content/images/SubscriberPlastic.jpg" width="100" height="100" alt="Cover Pic" align="left">
-                    The carbon footprint of producing a beverage bottle is 0.00013,
-                    so,choose  sturdy sports water bottle instead of the disposable mineral water bottle purchased in the store.
-                </p>
-            </div> <br /> <br />
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Tips_Id, "Category:", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.DropDownList("Tips_Id", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Tips_Id, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
-            <div style="color:white">
-                <p>
-                    <img src="~/Content/images/SubscriberCardboard.jpg" width="100" height="100" alt="Cover Pic" align="left">
-                    Integrate information technology into daily life. Work on your computer as often as possible to reduce paper usage
-                </p>
-            </div> <br /> <br /> <br />
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="subscribe here!" class="btn btn-default" style="color:white;background-color:grey;margin-left:auto;margin-right:auto;display:block;margin-top:auto;margin-bottom:0%" />
+                            </div>
+                        </div>
+                    </div>
+                }
+                <br /><br />
+                <hr />
 
-            <div style="color:white">
-                <p>
-                    <img src="~/Content/images/SubscriberLight.jpg" width="100" height="100" alt="Cover Pic" align="left">
-                    Choose the light bulb with long life as far as possible to reduce the replacement times of the light bulb.
-                    This can reduce the yield of spent light bulbs, further reducing carbon emissions.
-                </p>
+                <br /><br /> <br />
+
+                <h3 style="font-style:italic">Do you want to know latest trends with less carbon emission?</h3> <br />
+
+                <div class="form-group">
+                    <p>
+                        <img src="~/Content/images/SubscriberNylon.jpg" width="100" height="100" alt="Cover Pic" align="left"> Reduce using <b>Nylon</b>
+                        cloth materials as synthetic fiber emits much more carbon dioxide than the production of natural fiber cotton
+                    </p>
+                </div> <br /><br />
+
             </div>
-            <br />
+
+            <div class="col-6 col-md-4" id="text-color">
+
+                <h3>Do you want to Save your Carbon footprint</h3>
+                <h4 style="font-style:italic">Recycle your products - It keeps you environmentally-friendly </h4> <br />
+
+                <div class="form-group">
+                    <p>
+                        <img src="~/Content/images/SubscriberPlastic.jpg" width="100" height="100" alt="Cover Pic" align="left">
+                        The carbon footprint of producing a beverage bottle is 0.00013,
+                        so,choose  sturdy sports water bottle instead of the disposable mineral water bottle purchased in the store.
+                    </p>
+                </div> <br /> <br />
+
+                <br /> <br /> <br />
+
+                <div class="form-group">
+                    <p>
+                        <img src="~/Content/images/SubscriberLight.jpg" width="100" height="100" alt="Cover Pic" align="left">
+                        Choose the light bulb with long life as far as possible to reduce the replacement times of the light bulb.
+                        This can reduce the yield of spent light bulbs, further reducing carbon emissions.
+                    </p>
+                </div>
+                <br />
 
 
 
+            </div>
         </div>
-        </div>
+
+    </div>
+</body></html>
+
+
 
 
 @*<div>

@@ -138,40 +138,40 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Apparel.cs">
-      <DependentUpon>FootPrintModel.tt</DependentUpon>
+      <DependentUpon>footprintmodel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Category.cs">
-      <DependentUpon>FootPrintModel.tt</DependentUpon>
+      <DependentUpon>footprintmodel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Food.cs">
-      <DependentUpon>FootPrintModel.tt</DependentUpon>
+      <DependentUpon>footprintmodel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\food_apparels_cloth_recycle_tips.cs">
-      <DependentUpon>FootPrintModel.tt</DependentUpon>
+      <DependentUpon>footprintmodel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\FootPrintModel.Context.cs">
+    <Compile Include="Models\footprintmodel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FootPrintModel.Context.tt</DependentUpon>
+      <DependentUpon>footprintmodel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\FootPrintModel.cs">
+    <Compile Include="Models\footprintmodel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FootPrintModel.tt</DependentUpon>
+      <DependentUpon>footprintmodel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\FootPrintModel.Designer.cs">
+    <Compile Include="Models\footprintmodel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FootPrintModel.edmx</DependentUpon>
+      <DependentUpon>footprintmodel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Recycle.cs">
-      <DependentUpon>FootPrintModel.tt</DependentUpon>
+      <DependentUpon>footprintmodel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Subscriber.cs">
-      <DependentUpon>FootPrintModel.tt</DependentUpon>
+      <DependentUpon>footprintmodel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tip.cs">
-      <DependentUpon>FootPrintModel.tt</DependentUpon>
+      <DependentUpon>footprintmodel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\ApparelCalculate.cs" />
@@ -188,7 +188,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\general.css" />
-    <Content Include="Content\css\main.css" />
+    <Content Include="Content\main.css" />
     <Content Include="Content\images\ApparelCoverPic.jpg" />
     <Content Include="Content\images\coverPic.jpg" />
     <Content Include="Content\images\foodCoverPage.jpg" />
@@ -210,25 +210,29 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\FootPrintModel.Context.tt">
+    <Content Include="Models\footprintmodel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FootPrintModel.edmx</DependentUpon>
-      <LastGenOutput>FootPrintModel.Context.cs</LastGenOutput>
+      <DependentUpon>footprintmodel.edmx</DependentUpon>
+      <LastGenOutput>footprintmodel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\FootPrintModel.tt">
+    <Content Include="Models\footprintmodel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>FootPrintModel.edmx</DependentUpon>
-      <LastGenOutput>FootPrintModel.cs</LastGenOutput>
+      <DependentUpon>footprintmodel.edmx</DependentUpon>
+      <LastGenOutput>footprintmodel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\FootPrintModel.edmx">
+    <EntityDeploy Include="Models\footprintmodel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>FootPrintModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>footprintmodel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\FootPrintModel.edmx.diagram">
-      <DependentUpon>FootPrintModel.edmx</DependentUpon>
+    <Content Include="Models\footprintmodel.edmx.diagram">
+      <DependentUpon>footprintmodel.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\CarbonFootPrintAppService - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\CarbonFootPrintDev - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\CarbonTestAppService - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\CarbonTestAppService - Web Deploy1.pubxml" />
     <None Include="Properties\PublishProfiles\IEFootprintv1 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="FootPrintOneModelStoreContainer" CdmEntityContainer="FootPrintOneEntities1">
+  <EntityContainerMapping StorageEntityContainer="footprintdbModelStoreContainer" CdmEntityContainer="footprintdbEntities">
     <EntitySetMapping Name="Apparels">
-      <EntityTypeMapping TypeName="FootPrintOneModel.Apparel">
+      <EntityTypeMapping TypeName="footprintdbModel.Apparel">
         <MappingFragment StoreEntitySet="Apparels">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -14,7 +14,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Categories">
-      <EntityTypeMapping TypeName="FootPrintOneModel.Category">
+      <EntityTypeMapping TypeName="footprintdbModel.Category">
         <MappingFragment StoreEntitySet="Categories">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Kind" ColumnName="Kind" />
@@ -22,7 +22,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="food_apparels_cloth_recycle_tips">
-      <EntityTypeMapping TypeName="FootPrintOneModel.food_apparels_cloth_recycle_tips">
+      <EntityTypeMapping TypeName="footprintdbModel.food_apparels_cloth_recycle_tips">
         <MappingFragment StoreEntitySet="food_apparels_cloth_recycle_tips">
           <ScalarProperty Name="foods_id" ColumnName="foods_id" />
           <ScalarProperty Name="apparels_id" ColumnName="apparels_id" />
@@ -32,7 +32,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Foods">
-      <EntityTypeMapping TypeName="FootPrintOneModel.Food">
+      <EntityTypeMapping TypeName="footprintdbModel.Food">
         <MappingFragment StoreEntitySet="Foods">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Category" ColumnName="Category" />
@@ -49,7 +49,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Recycles">
-      <EntityTypeMapping TypeName="FootPrintOneModel.Recycle">
+      <EntityTypeMapping TypeName="footprintdbModel.Recycle">
         <MappingFragment StoreEntitySet="Recycle">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -63,7 +63,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Subscribers">
-      <EntityTypeMapping TypeName="FootPrintOneModel.Subscriber">
+      <EntityTypeMapping TypeName="footprintdbModel.Subscriber">
         <MappingFragment StoreEntitySet="Subscribers">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Mail_Id" ColumnName="Mail_Id" />
@@ -72,7 +72,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tips">
-      <EntityTypeMapping TypeName="FootPrintOneModel.Tip">
+      <EntityTypeMapping TypeName="footprintdbModel.Tip">
         <MappingFragment StoreEntitySet="Tips">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Tips_Kind" ColumnName="Tips_Kind" />

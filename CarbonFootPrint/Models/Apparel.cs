@@ -26,10 +26,7 @@ namespace CarbonFootPrint.Models
         public string Image_Path { get; set; }
         public string Suggestions { get; set; }
         public int Category_Id { get; set; }
-
-     
-
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<food_apparels_cloth_recycle_tips> food_apparels_cloth_recycle_tips { get; set; }
         public virtual Category Category { get; set; }
@@ -52,4 +49,5 @@ namespace CarbonFootPrint.Models
         public String optionFive { get; set; }
         public String optionSix { get; set; }
     }
+
 }
