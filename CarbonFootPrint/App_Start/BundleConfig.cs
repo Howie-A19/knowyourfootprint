@@ -26,7 +26,7 @@ namespace CarbonFootPrint
             bundles.Add(new StyleBundle("~/css/theme").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
-                      "~/Content/main.css"));
+                      "~/Content/css/general.css"));
         }
     }
 }

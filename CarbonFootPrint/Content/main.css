@@ -8,9 +8,7 @@
 }
 
 
-/*.table, .control-label, #text-color {
-    color: white;
-}*/
+
 .bottomleft {
     position:absolute;
     bottom: 16px;
@@ -47,7 +45,7 @@
 }
 
     .dropdown .dropbtn {
-        font-size: 16px;
+        font-size: 18px;
         border: none;
         outline: none;
         color: white;
@@ -74,12 +72,12 @@
         padding: 12px 16px;
         text-decoration: none;
         display: block;
-        text-align: left;
+        text-align: center;
     }
 
-        .dropdown-content a:hover {
+        /*.dropdown-content a:hover {
             background-color: #ddd;
-        }
+        }*/
 
 .dropdown:hover .dropdown-content {
     display:contents;
