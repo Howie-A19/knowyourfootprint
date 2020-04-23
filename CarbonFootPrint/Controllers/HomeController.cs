@@ -23,7 +23,15 @@ namespace CarbonFootPrint.Controllers
             return View();
         }
 
-      
+        public ActionResult PrivacyPolicy()
+        {
+            return View();
+        }
+
+        public ActionResult CookiesPolicy()
+        {
+            return View();
+        }
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
