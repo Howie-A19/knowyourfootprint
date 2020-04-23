@@ -4,17 +4,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carbon Footprint</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     @Styles.Render("~/css/theme")
+
+
 
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/bootstrap")
 
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<body >
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
@@ -39,9 +41,9 @@
                                 </ul>
                             </li>
                             <li> <a href="@Url.Action("Index", "Home")">What we do?</a>&nbsp; &nbsp;</li>
-                            <li><a href="@Url.Action("Commute", "Home")">Commute</a>&nbsp; &nbsp;</li>
+                            <li><a href="@Url.Action("Index", "Home")">Commute</a>&nbsp; &nbsp;</li>
                             <li><a href="@Url.Action("About", "Home")">About us</a>&nbsp; &nbsp;</li>
-                            <li><a href="@Url.Action("FAQ", "Home")">FAQ's</a></li>
+                            <li><a href="@Url.Action("Index", "Home")">FAQ's</a></li>
 
                         </ul>
                     </div>
@@ -49,7 +51,7 @@
             </div>
             
             <div class="navbar-left">
-                <a href="@Url.Action("Index", "Home")">Know your Footprint's</a>
+                <a class="navbar-brand" href="@Url.Action("Index", "Home")">Know your Footprint's</a>
             </div>
       
             </div>
@@ -65,14 +67,18 @@
     <footer>
         @*<p style="color:white">&copy; @DateTime.Now.Year - Welcome to Carbon footprint</p>*@
 
-        <hr />
-        <div class="container">
-            <div class="navbar-left">
-                @Html.ActionLink("Contact Us", "Contact", "Home") &nbsp; &nbsp;
-                @Html.ActionLink("Copyright", "About", "Home") &nbsp; &nbsp;
-                @Html.ActionLink("Privacy Policy", "Contact", "Home")
+
+
+        <nav class="navbar navbar-inverse  navbar-fixed-bottom">
+            <div class="container-fluid">
+                <div class="navbar-left">
+                    <a class="navbar-brand" href="@Url.Action("Contact", "Home")">Contact Us</a>&nbsp; &nbsp;
+                    <a class="navbar-brand" href="@Url.Action("CookiesPolicy", "Home")">Cookies Policy</a>&nbsp; &nbsp;
+                    <a class="navbar-brand" href="@Url.Action("PrivacyPolicy", "Home")">Copyright & Privacy Policy</a>
+
+                </div>
             </div>
-        </div>
+        </nav>
 
     </footer>
 
