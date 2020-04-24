@@ -27,8 +27,8 @@ namespace CarbonFootPrint.Controllers
         public ActionResult ApparelMain()
         {
             ViewBag.ApparelOne = new SelectList(db.Apparels, "Name", "Name");
-            ViewBag.ApparelTwo = new SelectList(db.Apparels, "Name", "Name");
-            ViewBag.ApparelThree = new SelectList(db.Apparels, "Name", "Name");
+            //ViewBag.ApparelTwo = new SelectList(db.Apparels, "Name", "Name");
+            //ViewBag.ApparelThree = new SelectList(db.Apparels, "Name", "Name");
            
 
             return View();
@@ -41,29 +41,30 @@ namespace CarbonFootPrint.Controllers
             ApparelCalculate apparelCalc = new ApparelCalculate();
 
             float qtyOneCFP = apparelCalc.generalApparelCalculate(apparelList.apparelOne, apparelList.quantityOne);
-            float qtyTwoCFP = apparelCalc.generalApparelCalculate(apparelList.apparelTwo, apparelList.quantityTwo);
-            float qtyThreeCFP = apparelCalc.generalApparelCalculate(apparelList.apparelThree, apparelList.quantityThree);
+          //  float qtyTwoCFP = apparelCalc.generalApparelCalculate(apparelList.apparelTwo, apparelList.quantityTwo);
+            //float qtyThreeCFP = apparelCalc.generalApparelCalculate(apparelList.apparelThree, apparelList.quantityThree);
             
-            float totalCFP = (qtyOneCFP + qtyTwoCFP + qtyThreeCFP);
+            //float totalCFP = (qtyOneCFP + qtyTwoCFP + qtyThreeCFP);
 
 
-            float choicesApparelCalculateOne = apparelCalc.choicesApparelCalculateOne(totalCFP, apparelList.optionOne);
-            float choicesApparelCalculateTwo = apparelCalc.choicesApparelCalculateTwo(choicesApparelCalculateOne, apparelList.optionTwo);
-            float choicesApparelCalculateThree = apparelCalc.choicesApparelCalculateThree(choicesApparelCalculateTwo, apparelList.optionThree);
-            float choicesApparelCalculateFour = apparelCalc.choicesApparelCalculateFF(choicesApparelCalculateThree, apparelList.optionFour);
-            float choicesApparelCalculateFive = apparelCalc.choicesApparelCalculateFF(choicesApparelCalculateFour, apparelList.optionFive);
-            float finalCFP = apparelCalc.choicesApparelCalculateSix(choicesApparelCalculateFive, apparelList.optionSix);
+            float choicesApparelCalculateOne = apparelCalc.choicesApparelCalculateOne(qtyOneCFP);
+            float choicesApparelCalculateTwo = apparelCalc.choicesApparelCalculateTwo(qtyOneCFP);
+            float choicesApparelCalculateThree = apparelCalc.choicesApparelCalculateThree(qtyOneCFP);
+            float choicesApparelCalculateFour = apparelCalc.choicesApparelCalculateFF(qtyOneCFP);
+            float choicesApparelCalculateFive = apparelCalc.choicesApparelCalculateFF(qtyOneCFP);
 
-            //float finalCFP = choicesApparelCalculateThree;
 
-            ViewBag.totalCFP = totalCFP + " kg of CO2";
-            ViewBag.finalCFP = finalCFP + " kg of CO2";
-           
+            ViewBag.actualCFP = qtyOneCFP;
+
+            ViewBag.ecoEfficiency = Math.Round((decimal)choicesApparelCalculateOne, 2) ;
+            ViewBag.durable = Math.Round((decimal)choicesApparelCalculateTwo, 2) ;
+            ViewBag.cleanCloth = Math.Round((decimal)choicesApparelCalculateThree, 2) ;
+            ViewBag.washClothesOrIncreaseWashingSize = Math.Round((decimal)choicesApparelCalculateFour, 2);
+            ViewBag.reuseMore = Math.Round((decimal)choicesApparelCalculateFive, 2) ;
+
+          
 
             ViewBag.ApparelOne = new SelectList(db.Apparels, "Name", "Name");
-            ViewBag.ApparelTwo = new SelectList(db.Apparels, "Name", "Name");
-            ViewBag.ApparelThree = new SelectList(db.Apparels, "Name", "Name");
-
             return View();
 
         }

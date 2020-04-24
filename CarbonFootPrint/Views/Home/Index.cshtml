@@ -5,43 +5,108 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
+    @*<meta charset="utf-8">*@
     @*<link href="~/Content/css/main.css" rel="stylesheet" />*@
 
-    @Styles.Render("~/Content/css")
+    @Styles.Render("~/css/theme")
  <style>
      body {
-    background-image: url("/Content/images/coverPic.jpg");
-    background-position: center; 
-    background-repeat: no-repeat;
-    background-size: cover;
+   background-color:antiquewhite;
 }
  </style>
 
 </head>
-<body class="ma-header">
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <br />
+        <div class="container">
+          <div class="form-horizontal">
+              <div class="jumbotron" style="background-color:aquamarine">
 
-    <br /><br /><br /><br />
-    <div class="text-center">
-        <h4>
-            <a href="@Url.Action("_SubscriberPartial", "Subscribers")">Subscribe yourself to get the latest update?</a>
-        </h4>
-    </div>
+                  
+              <h3 style="text-align:center"><b><i> Welcome to know your carbon footprints</i></b></h3>
+                 
+              <div class="row">
+                  <div class="col-12 col-md-6">
+                      <br />
+                      <div class="jumbotron">
+                          <div class="text-center">
+                              <img src="~/Content/images/icons/food/bread.png" class="rounded" width="100" height="100" alt="hello image">
+                          </div>
+
+                      </div>
 
 
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <div id="content">
-        <div id="left">
-            <h2 style="color:white;font-style:italic" align="left">Students towards <br/> Net zero Carbon Emissions</h2>
+
+                      <br /><br /><br /><br /><br /><br /><br/><br/>
+                      <div class="breadcrumb">
+
+                      <div class="form-group">
+
+                          <h2 style="color:black;font-style:italic" align="left">Students towards <br /> Net zero Carbon Emissions</h2>
+                          <p style="color:black;font-style:italic" align="left">
+                              check Carbon Emissions from your daily lifestyle activities and
+                              learn exciting & engaging ways to adapt to a sustainable and
+                              greener lifestyle
+                          </p>
+                      </div>
+                          </div>
+                  </div>
+
+                      <div class="col-6 col-md-6">
+                          <br/>
+                          <div class="jumbotron">
+                              <h3 style="text-align:center"><i>Do you want to get tips and suggestions <br /> to reduce your carbon footprint</i> </h3>
 
 
-            <p style="color:white;font-style:italic" align="left">
-                check Carbon Emissions from your daily lifestyle activities and
-                learn exciting & engaging ways to adapt to a sustainable and
-                greener lifestyle
-            </p>
+                              <a href="@Url.Action("_SubscriberPartial", "Subscribers")" style="text-align:center"><h3><span class="glyphicon glyphicon-arrow-right"></span>  <i>Subscribe Here</i> </h3></a>
+                          </div>
+
+                          <div class="jumbotron">
+                              <h4 style="text-align:center">
+                                  Try out our<b><i> Lifestyles </i> </b>features <br />
+                                  to calculate your <b><i> carbon footprints </i> </b>based on
+                              </h4>
+
+                              <h4 style="text-align:center">
+                                  <b><i> Foods </i> </b> <br />
+                              </h4>
+                              <h4 style="text-align:center">
+                                  <b><i> Clothes </i> </b> <br />
+                              </h4>
+                              <h4 style="text-align:center">
+                                  <b><i> Recycle </i> </b> <br />
+                              </h4>
+                          </div>
+
+                          <div class="jumbotron">
+                              <h4 style="text-align:center">
+                                 Do you want contribute for environment to reduce<b><i> your carbon footprint </i> </b><br />
+                              </h4><br/>
+
+                              <h4 style="text-align:center">
+                                  Try out <b><i> Commute </i> </b>  feature
+                              </h4><br />
+                              <h4 style="text-align:center">
+                                  <b><i> Enter your soure & destination  </i> </b> <br />
+                                  and choose eco-friendly way to commute
+                              </h4>
+                             
+                          </div>
+
+
+                      </div>
+
+                  </div>
+
+
+
+
+              </div> <br />
+            </div>
         </div>
-
-    </div>
+    }
 </body>
 </html>

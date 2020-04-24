@@ -28,50 +28,55 @@ namespace CarbonFootPrint.Utils
         }
 
         //Would you buy the apparels from the brands that is Eco-efficiency across supply chain? 
-        public float choicesApparelCalculateOne(float carbonValue, String check)
+        public float choicesApparelCalculateOne(float carbonValue)
         {
-            if (check.Equals("Yes"))
-               carbonValue = carbonValue - (carbonValue * 0.245f);
+            
+            float reducedCarbonValue = carbonValue - (carbonValue * 0.245f);
+            float differenceCarbonValue = carbonValue - reducedCarbonValue;
              
-            return carbonValue;
+            return differenceCarbonValue;
 
         }
 
         //Would you buy the apparels that are design for durability
-        public float choicesApparelCalculateTwo(float carbonValue, String check)
+        public float choicesApparelCalculateTwo(float carbonValue)
         {
-            if(check.Equals("Yes"))
-            carbonValue = carbonValue - (carbonValue * 0.273f);
 
-            return carbonValue;
+            float reducedCarbonValue = carbonValue - (carbonValue * 0.273f);
+            float differenceCarbonValue = carbonValue - reducedCarbonValue;
+
+            return differenceCarbonValue;
         }
 
         //Would you clean clothing less frequency?
-        public float choicesApparelCalculateThree(float carbonValue, String check)
+        public float choicesApparelCalculateThree(float carbonValue)
         {
-            if(check.Equals("Yes"))
-            carbonValue = carbonValue - (carbonValue * 0.039f);
+           
+            float reducedCarbonValue = carbonValue - (carbonValue * 0.039f);
+            float differenceCarbonValue = carbonValue - reducedCarbonValue;
 
-            return carbonValue;
+            return differenceCarbonValue;
         }
 
         // Would you wash your clothes at lower temperature (around room temp)?
         //Would you increase the size of washing/drying load?
-        public float choicesApparelCalculateFF(float carbonValue, String check)
+        public float choicesApparelCalculateFF(float carbonValue)
         {
-            if (check.Equals("Yes"))
-                carbonValue = carbonValue - (carbonValue * 0.027f);
+            
+            float reducedCarbonValue = carbonValue - (carbonValue * 0.027f);
+            float differenceCarbonValue = carbonValue - reducedCarbonValue;
 
-            return carbonValue;
+            return differenceCarbonValue;
         }
 
         //Would you dispose less and reuse more?
-        public float choicesApparelCalculateSix(float carbonValue, String check)
+        public float choicesApparelCalculateSix(float carbonValue)
         {
-            if (check.Equals("Yes"))
-                carbonValue = carbonValue - (carbonValue * 0.021f);
+            
+            float reducedCarbonValue = carbonValue - (carbonValue * 0.021f);
+            float differenceCarbonValue = carbonValue - reducedCarbonValue;
 
-            return carbonValue;
+            return differenceCarbonValue;
         }
 
     }

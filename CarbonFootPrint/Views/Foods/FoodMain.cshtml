@@ -12,7 +12,7 @@
     <style>
         body {
     background-image: url("/Content/images/foodCoverPage.jpg");
-    background-position:bottom; 
+    background-position:center; 
     background-repeat: no-repeat;
     background-size:cover;
 
@@ -44,7 +44,7 @@
     {
         @Html.AntiForgeryToken()
 
-
+        <br/> <br/><br/>
 
         <h2 style="text-align:center; color:white"><i>Food Carbon Calculator</i></h2> <br />
         <p style="text-align:center; color:white"><i>Tell us what you had in food and calculate the impact of your food consumptions on the climate change<</i></p> <br />
@@ -57,7 +57,8 @@
    
 
     <div class="row">
-        <div class="col-12 col-md-8">
+
+        <div class="col-12 col-md-6">
 
 
             <div class="form-group">
@@ -70,7 +71,9 @@
                 </div> <br /><hr />
             </div>
 
-            <h3 style="color:black">Calculate against your frequency usage</h3>
+
+
+            @*<h3 style="color:black">Calculate against your frequency usage</h3>*@
             <div class="form-group">
 
                 <i> @Html.LabelFor(model => model.frequency, "Consumed Frequency: ", htmlAttributes: new { @class = "control-label col-md-2" })</i>
@@ -80,47 +83,25 @@
                     @Html.ValidationMessageFor(model => model.frequency, "", new { @class = "text-danger" })
                 </div>
             </div><br />
-            <h3><i>OR</i></h3>
-            <hr />
+            @*<h3><i>OR</i></h3>
+        <hr />*@<br /><br />
 
-
-            <div>
-
-                <h3 style="color:black">Calculate against Nutritional Fact</h3>
-                <div class="form-group">
-
-                    <i> @Html.Label("Nutritional Fact: ", htmlAttributes: new { @class = "control-label col-md-2" })</i>
-
-                    <div class="col-md-10">
-                        @Html.DropDownListFor(model => model.nutrition, (SelectList)ViewBag.ViewNutritionList, "-select-")
-                        @Html.ValidationMessageFor(model => model.nutrition, "", new { @class = "text-danger" })
-                    </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Calculate" class="btn btn-default" />
                 </div>
-                <br /><br />
-                <div class="form-group">
+            </div>
 
-                    <i> @Html.LabelFor(model => model.input, "Input (eg: 100,1000):", htmlAttributes: new { @class = "control-label col-md-2" })</i>
-
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.input, new { htmlAttributes = new { @class = "form-control" } })
-                        @*@Html.ValidationMessageFor(model => model.input, "", new { @class = "text-danger" })*@
-
-                    </div>
-                </div><br /><br />
-
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Calculate" class="btn btn-default" />
-                    </div>
-                </div>
+            <div class="form-group-sm">
+                <a href="@Url.Action("FoodAdvance", "Foods")">Advance Calculator</a>
             </div>
 
         </div>
 
 
 
-        <div class="col-6 col-md-4">
-            <br /><br /><br />
+        <div class="col-6 col-md-6">
+            
 
             @if (ViewBag.carbonValue != null)
             {

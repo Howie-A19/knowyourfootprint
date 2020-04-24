@@ -7,7 +7,7 @@
 }
 
 <html>
-<head>
+<head>  
     <style>
         body {
             background-image: url("/Content/images/ApparelCoverPic.jpg");
@@ -32,166 +32,149 @@
     </style>
 </head>
 <body>
-    <br /><br />
+    <br /><br /><br/><br/>
+          <div class="form-horizontal">
 
-    <h2 style="text-align:center; color:white">Apparel Carbon Calculator</h2> <br />
-    <p style="text-align:center; color:white">Tell us your apparels and find the impact of your apparels consumptions on the climate change</p> <br />
-    
-    @using (Html.BeginForm("ApparelMain", "Apparels", FormMethod.Post))
-    {
-        @Html.AntiForgeryToken()
+              <h2 style="text-align:center; color:white">Apparel Carbon Calculator</h2> <br />
+              <p style="text-align:center; color:white">
+                  On an average 3,700 litres of water goes into making a pair of jeans which involves manufacturing, production till
+ transportation of the final product. This whole process emits around 30 kilograms of greenhouse gases.
 
-        <div class="row">
-            <div class="col-12 col-md-8">
+Tell us what's there in your wardrobe and we will calculate the impact of your purchase on climate. Additionally,
+ we will provide you with tips on leading a sustainable fashion lifestyle.
+                  
+                  
+                  </p> <br />
 
-                <table class="table" border="1" style="border-color:white">
-                    <tr>
-                        <td style="color:black">
-                            Apparel <i> (Select your items - max: 3 items)</i>
-                        </td>
-                        <td style="color:black">
-                            Quantity <i> (eg: 1,2,3...)</i>
-                        </td>
-                    </tr>
+              @using (Html.BeginForm("ApparelMain", "Apparels", FormMethod.Post))
+              {
+                  @Html.AntiForgeryToken()
 
-                    <tr>
-                        <td>
-                            @Html.DropDownListFor(model => model.apparelOne, (SelectList)ViewBag.ApparelOne, "-select-")
-                            @Html.ValidationMessageFor(model => model.apparelOne, "", new { @class = "text-danger" })
-                        </td>
-                        <td>
-                            @Html.EditorFor(model => model.quantityOne, new { htmlAttributes = new { @class = "form-control" } })
-                        </td>
-                    </tr>
+                  <div class="jumbotron">
 
-                    <tr>
-                        <td>
-                            @Html.DropDownListFor(model => model.apparelTwo, (SelectList)ViewBag.ApparelTwo, "-select-")
-                            @Html.ValidationMessageFor(model => model.apparelOne, "", new { @class = "text-danger" })
-                        </td>
-                        <td>
-                            @Html.EditorFor(model => model.quantityTwo, new { htmlAttributes = new { @class = "form-control" } })
-                        </td>
-                    </tr>
+                      <div class="row">
+                          <div class="col-6 col-md-6">
 
-                    <tr>
-                        <td>
-                            @Html.DropDownListFor(model => model.apparelThree, (SelectList)ViewBag.ApparelThree, "-select-")
-                            @Html.ValidationMessageFor(model => model.apparelThree, "", new { @class = "text-danger" })
-                        </td>
-                        <td>
-                            @Html.EditorFor(model => model.quantityThree, new { htmlAttributes = new { @class = "form-control" } })
-                        </td>
-                    </tr>
-                </table>
+                              <br/><br/>
+                              <div class="form-group">
+                                  <i> @Html.LabelFor(model => model.apparelOne, "Clothes: ", htmlAttributes: new { @class = "control-label col-md-2" })</i>
+                                  <div class="col-md-10">
 
+                                      @Html.DropDownListFor(model => model.apparelOne, (SelectList)ViewBag.ApparelOne, "-select-")
+                                      @Html.ValidationMessageFor(model => model.apparelOne, "", new { @class = "text-danger" })
+                                  </div> <br />
+                              </div>
 
-                <div class="form-group" style="color:black">
+                              <br />
+                              <div class="form-group">
 
-                    <table>
-                        <tr>
-                            <td><i>Would you buy the apparels from the brands that is Eco-efficiency across supply chain?</i></td>
-                            <td>
-                                Yes
-                                @Html.RadioButtonFor(model => model.optionOne, "Yes") &nbsp; &nbsp;
-                                No
-                                @Html.RadioButtonFor(model => model.optionOne, "No", new { Checked = "checked" })
-                            </td>
+                                  <i> @Html.LabelFor(model => model.quantityOne, "Quantities: ", htmlAttributes: new { @class = "control-label col-md-2" })</i>
+
+                                  <div class="col-md-10">
+                                      @Html.EditorFor(model => model.quantityOne, new { htmlAttributes = new { @class = "form-control" } })
+                                     
+                                      <br /><br />
+                                  </div>
+                              </div>
+
+                              <div class="form-group">
+                                  <div class="col-md-offset-2 col-md-10">
+                                      <input type="submit" value="Calculate" class="btn btn-default" />
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="col-12 col-md-6">
 
 
-                        </tr>
 
-                        <tr>
-                            <td><i>Would you buy the apparels that are design for durability??</i></td>
+                              @if (ViewBag.actualCFP != null)
+                              {
+                                  <div class="Output">
 
-                            <td>
-                                Yes
-                                @Html.RadioButtonFor(model => model.optionTwo, "Yes") &nbsp; &nbsp;
-                                No
-                                @Html.RadioButtonFor(model => model.optionTwo, "No", new { Checked = "checked" })
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td><i>Would you clean clothing less frequency?</i></td>
-                            <td>
-                                Yes
-                                @Html.RadioButtonFor(model => model.optionThree, "Yes") &nbsp; &nbsp;
-                                No
-                                @Html.RadioButtonFor(model => model.optionThree, "No", new { Checked = "checked" })
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td><i>Would you wash your clothes at lower temperature (around room temp)?</i></td>
-                            <td>
-                                Yes
-                                @Html.RadioButtonFor(model => model.optionFour, "Yes") &nbsp; &nbsp;
-                                No
-                                @Html.RadioButtonFor(model => model.optionFour, "No", new { Checked = "checked" })
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td><i>Would you increase the size of washing/drying load?</i></td>
-                            <td>
-                                Yes
-                                @Html.RadioButtonFor(model => model.optionFive, "Yes") &nbsp; &nbsp;
-                                No
-                                @Html.RadioButtonFor(model => model.optionFive, "No", new { Checked = "checked" })
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td><i>Would you dispose less and reuse more?</i></td>
-                            <td>
-                                Yes
-                                @Html.RadioButtonFor(model => model.optionSix, "Yes") &nbsp; &nbsp;
-                                No
-                                @Html.RadioButtonFor(model => model.optionSix, "No", new { Checked = "checked" })
-                            </td>
-                        </tr>
-
-                    </table>
-
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Calculate Your footprint" class="btn btn-default" />
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-            <div class="col-6 col-md-4">
-
-
-                @if (ViewBag.totalCFP != null)
-                {
-                    <div class="Output">
-
-                          <h4 style="color:darkslateblue">Your CO2 Emission is: </h4>
-                        <p style="color:darkslateblue"> @ViewBag.totalCFP</p>
-                    </div>
-                }
-
-                @if (ViewBag.finalCFP != null)
-                {
-                    <div class="Output">
-
-                        <h4 style="color:darkslateblue">Your Reduced CO2 Emission is: </h4>
-                        <p style="color:darkslateblue"> @ViewBag.finalCFP</p>
-                    </div>
-                }
+                                      <h4 style="color:black">Your CO2 Emission is: </h4>
+                                      <p style="color:black"> <b> @ViewBag.actualCFP  Kg of CO<sub>2</sub></b></p>
 
 
 
 
-            </div>
-        </div>
-    }
+                                      @if (ViewBag.ecoEfficiency != null && ViewBag.ecoEfficiency != 0)
+                                      {
 
+
+                                          <h3><i>Top Tips for Reducing your Clothing Carbon Footprint:</i></h3>
+
+                                          <ul class="form-group">
+
+                                              @if (ViewBag.ecoEfficiency != null)
+                                              {
+                                                  <li>
+                                                      <p style="font-size:medium">
+                                                          Buying these clothes with eco-efficiency brands reduces <b> @ViewBag.ecoEfficiency Kg of CO<sub>2</sub></b>
+                                                      </p>
+
+                                                  </li>
+                                              }
+
+                                              @if (ViewBag.durable != null)
+                                              {
+                                                  <li>
+                                                      <p style="font-size:medium">
+                                                          Buying these clothes with durability reduces <b> @ViewBag.durable Kg of CO<sub>2</sub></b>
+                                                      </p>
+
+                                                  </li>
+                                              }
+
+                                              @if (ViewBag.cleanCloth != null)
+                                              {
+                                                  <li style="font-size:medium">
+                                                      <p style="font-size:medium">
+                                                          Cleaning these item with less frequency reduces <b> @ViewBag.cleanCloth Kg of CO<sub>2</sub></b>
+                                                      </p>
+
+                                                  </li>
+                                              }
+
+                                              @if (ViewBag.washClothesOrIncreaseWashingSize != null)
+                                              {
+                                                  <li>
+                                                      <p style="font-size:medium">
+                                                          Washing these clothes with low temperature or increasing drying load of the size of washing reduces <b> @ViewBag.washClothesOrIncreaseWashingSize Kg of CO<sub>2</sub></b>
+                                                      </p>
+
+                                                  </li>
+                                              }
+
+                                              @if (ViewBag.reuseMore != null)
+                                              {
+                                                  <li>
+                                                      <p style="font-size:medium">
+                                                          Resuing these clothes reduces <b> @ViewBag.reuseMore Kg of CO<sub>2</sub></b>
+                                                      </p>
+
+                                                  </li>
+                                              }
+
+                                          </ul>
+
+                                      }
+                                  </div>
+                              }
+                            
+
+
+                              </div>
+
+
+                          </div>
+
+                  </div>
+           
+
+
+              }
+          </div> <br/> <br/>
 
 </body>
 </html>
