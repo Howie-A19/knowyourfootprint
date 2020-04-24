@@ -34,11 +34,7 @@ namespace CarbonFootPrint.Controllers
             var aList = Values.Select((x, i) => new { Value = x, Data = x }).ToList();
             ViewBag.ViewFrequencyList = new SelectList(aList, "Value", "Data");
 
-            var nutritionValues = new List<String> { "Protein per gm", "Energy per Calories"};
-            var nList = nutritionValues.Select((x, i) => new { Value = x, Data = x }).ToList();
-            ViewBag.ViewNutritionList = new SelectList(nList, "Value", "Data");
-
-            // ViewBag.ViewFrequencyList = frequencyList;
+           
 
             return View();
         }
@@ -49,13 +45,11 @@ namespace CarbonFootPrint.Controllers
         {
             String category = food.Category;
             String freq = food.frequency;
-            String nutrition = food.nutrition;
+           // String nutrition = food.nutrition;
 
             float carbonValue = 0;
             FoodCalculate foodCalc = new FoodCalculate();
-           // var tempFood = db.Foods.Where(c => c.Category== category.Trim()).Include(b => b.Category1).ToList();
-           // Food foodOne = tempFood[0];
-
+   
             var tempFood = db.Foods.Where(c => c.Category == category.Trim()).FirstOrDefault();
             Food foodOne = tempFood;
 
@@ -65,10 +59,7 @@ namespace CarbonFootPrint.Controllers
                 {
                     carbonValue = foodCalc.calCarbonUsingFoodFrequency(food.frequency, foodOne);
                 }
-                if (nutrition != null)
-                {
-                    carbonValue = foodCalc.calCarbonUsingNutrition(food.nutrition, food.input, foodOne);
-                }
+               
             }
 
            
@@ -82,14 +73,59 @@ namespace CarbonFootPrint.Controllers
             var aList = Values.Select((x, i) => new { Value = x, Data = x }).ToList();
             ViewBag.ViewFrequencyList = new SelectList(aList, "Value", "Data");
 
+          
+            return View();
+
+        }
+
+    public ActionResult FoodAdvance()
+        {
+            ViewBag.Category = new SelectList(db.Foods, "Category", "Category");
+
+
             var nutritionValues = new List<String> { "Protein per gm", "Energy per Calories" };
             var nList = nutritionValues.Select((x, i) => new { Value = x, Data = x }).ToList();
             ViewBag.ViewNutritionList = new SelectList(nList, "Value", "Data");
 
+            return View();
+        }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public ActionResult FoodAdvance(Food food)
+        {
+            String category = food.Category;
+            //String freq = food.frequency;
+            String nutrition = food.nutrition;
+
+            float carbonValue = 0;
+            FoodCalculate foodCalc = new FoodCalculate();
+          
+
+            var tempFood = db.Foods.Where(c => c.Category == category.Trim()).FirstOrDefault();
+            Food foodOne = tempFood;
+
+            if (foodOne != null)
+            {
+               
+                if (nutrition != null)
+                {
+                    carbonValue = foodCalc.calCarbonUsingNutrition(food.nutrition, food.input, foodOne);
+                }
+            }
 
 
+
+            ViewBag.carbonValue = carbonValue + " kg of CO2";
+
+            ViewBag.Category = new SelectList(db.Foods, "Category", "Category");
+
+            var nutritionValues = new List<String> { "Protein per gm", "Energy per Calories" };
+            var nList = nutritionValues.Select((x, i) => new { Value = x, Data = x }).ToList();
+            ViewBag.ViewNutritionList = new SelectList(nList, "Value", "Data");
 
             return View();
+
 
         }
 

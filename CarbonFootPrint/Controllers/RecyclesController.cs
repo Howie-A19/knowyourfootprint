@@ -40,9 +40,13 @@ namespace CarbonFootPrint.Controllers
 
             //TotalRecycle
             float finalTotalQty = recycleCalc.getTotalCarbonValue(recycleQty);
+            double reducedCO = finalTotalQty - finalReducedQty;
+            decimal decimalValue = Math.Round((decimal)reducedCO, 2);
+            
 
-            ViewBag.finalTotalQty = finalTotalQty + " kg of CO2";
-            ViewBag.finalReducedQty = finalReducedQty + " kg of CO2";
+            ViewBag.finalTotalQty = finalTotalQty ;
+            ViewBag.finalReducedQty = finalReducedQty ;
+            ViewBag.reducedCO = decimalValue;
             
 
 

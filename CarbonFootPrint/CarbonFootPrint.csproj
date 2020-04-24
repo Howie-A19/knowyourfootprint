@@ -194,12 +194,8 @@
     <Content Include="Content\images\coverPic.jpg" />
     <Content Include="Content\images\foodCoverPage.jpg" />
     <Content Include="Content\images\forest.jpg" />
-    <Content Include="Content\images\homeOne.jpg" />
-    <Content Include="Content\images\homeThree.jpg" />
     <Content Include="Content\images\homeTwo.jpg" />
     <Content Include="Content\images\RecycleCoverPic.jpg" />
-    <Content Include="Content\images\SubscriberCardboard.jpg" />
-    <Content Include="Content\images\SubscriberHemp.jpg" />
     <Content Include="Content\images\SubscriberLight.jpg" />
     <Content Include="Content\images\SubscriberNylon.jpg" />
     <Content Include="Content\images\SubscriberOrange.jpg" />
@@ -293,6 +289,7 @@
     <Content Include="Views\Recycles\RecycleMain.cshtml" />
     <Content Include="Views\Home\PrivacyPolicy.cshtml" />
     <Content Include="Views\Home\CookiesPolicy.cshtml" />
+    <Content Include="Views\Foods\FoodAdvance.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
