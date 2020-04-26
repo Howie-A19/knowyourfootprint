@@ -35,19 +35,8 @@ namespace CarbonFootPrint.Models
     public class Apparel_List
     {
         public float quantityOne { get; set; }
-        public float quantityTwo { get; set; }
-        public float quantityThree { get; set; }
-
         public String apparelOne { get; set; }
-        public String apparelTwo { get; set; }
-        public String apparelThree { get; set; }
-
-        public String optionOne { get; set; }
-        public String optionTwo { get; set; }
-        public String optionThree { get; set; }
-        public String optionFour { get; set; }
-        public String optionFive { get; set; }
-        public String optionSix { get; set; }
+       
     }
 
 }

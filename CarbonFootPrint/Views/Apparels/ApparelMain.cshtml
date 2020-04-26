@@ -9,12 +9,12 @@
 <html>
 <head>  
     <style>
-        body {
+        /*body {
             background-image: url("/Content/images/ApparelCoverPic.jpg");
             background-position:left;
             background-repeat: no-repeat;
             background-size: cover;
-        }
+        }*/
         .Output{
              
  
@@ -22,7 +22,8 @@
   padding-top: 50px;
   padding-right: 30px;
   padding-bottom: 50px;
-  padding-left: 80px;
+  padding-left: 30px;
+  text-align:left
 }
         
     
@@ -31,12 +32,12 @@
         }
     </style>
 </head>
-<body>
+<body style="background-color:cadetblue">
     <br /><br /><br/><br/>
           <div class="form-horizontal">
 
-              <h2 style="text-align:center; color:white">Apparel Carbon Calculator</h2> <br />
-              <p style="text-align:center; color:white">
+              <h2 style="text-align:center">Clothing Carbon Calculator</h2> <br />
+              <p style="text-align:center">
                   On an average 3,700 litres of water goes into making a pair of jeans which involves manufacturing, production till
  transportation of the final product. This whole process emits around 30 kilograms of greenhouse gases.
 
@@ -60,7 +61,7 @@ Tell us what's there in your wardrobe and we will calculate the impact of your p
                                   <i> @Html.LabelFor(model => model.apparelOne, "Clothes: ", htmlAttributes: new { @class = "control-label col-md-2" })</i>
                                   <div class="col-md-10">
 
-                                      @Html.DropDownListFor(model => model.apparelOne, (SelectList)ViewBag.ApparelOne, "-select-")
+                                      @Html.DropDownListFor(model => model.apparelOne, (SelectList)ViewBag.ApparelOne, "-select-",htmlAttributes: new { @class = "form-control" })
                                       @Html.ValidationMessageFor(model => model.apparelOne, "", new { @class = "text-danger" })
                                   </div> <br />
                               </div>
@@ -68,7 +69,7 @@ Tell us what's there in your wardrobe and we will calculate the impact of your p
                               <br />
                               <div class="form-group">
 
-                                  <i> @Html.LabelFor(model => model.quantityOne, "Quantities: ", htmlAttributes: new { @class = "control-label col-md-2" })</i>
+                                  <i> @Html.LabelFor(model => model.quantityOne, "Quantity: ", htmlAttributes: new { @class = "control-label col-md-2" })</i>
 
                                   <div class="col-md-10">
                                       @Html.EditorFor(model => model.quantityOne, new { htmlAttributes = new { @class = "form-control" } })
@@ -79,14 +80,12 @@ Tell us what's there in your wardrobe and we will calculate the impact of your p
 
                               <div class="form-group">
                                   <div class="col-md-offset-2 col-md-10">
-                                      <input type="submit" value="Calculate" class="btn btn-default" />
+                                      <input type="submit" value="Calculate carbon footprint" class="btn btn-default" />
                                   </div>
                               </div>
                           </div>
 
-                          <div class="col-12 col-md-6">
-
-
+                          <div class="col-12 col-md-6" >
 
                               @if (ViewBag.actualCFP != null)
                               {
@@ -150,7 +149,7 @@ Tell us what's there in your wardrobe and we will calculate the impact of your p
                                               {
                                                   <li>
                                                       <p style="font-size:medium">
-                                                          Resuing these clothes reduces <b> @ViewBag.reuseMore Kg of CO<sub>2</sub></b>
+                                                          Reusing these clothes reduces <b> @ViewBag.reuseMore Kg of CO<sub>2</sub></b>
                                                       </p>
 
                                                   </li>

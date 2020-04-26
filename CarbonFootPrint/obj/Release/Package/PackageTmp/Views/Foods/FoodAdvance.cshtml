@@ -10,12 +10,7 @@
 <head>
 
     <style>
-        body {
-            background-image: url("/Content/images/foodCoverPage.jpg");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+       
 
         h2, h3, LabelFor, Label {
             color: black;
@@ -38,15 +33,17 @@
         }
     </style>
 </head>
-<body>
+<body style="background-color:cadetblue">
     @using (Html.BeginForm("FoodAdvance", "Foods", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
 
 
         <br /> <br /><br />
-        <h2 style="text-align:center; color:white"><i>Food Carbon Calculator</i></h2> <br />
-        <p style="text-align:center; color:white"><i>Tell us what you had in food and calculate the impact of your food consumptions on the climate change<</i></p> <br />
+        <h2 style="text-align:center"><i>Food Carbon Calculator</i></h2> <br />
+        <p style="text-align:center"><i>Tell us what you had in food and calculate the impact of your food consumptions on the climate change</i></p> <br />
+       
+        
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
 
@@ -61,43 +58,48 @@
 
                     <div>
 
-                        <h4 style="color:black">Calculate against Nutritional Fact</h4> <br />
-                        <div class="form-group">
-                            <i> @Html.LabelFor(model => model.Category, "Category: ", htmlAttributes: new { @class = "control-label col-md-2" })</i>
-                            <div class="col-md-10">
+                        <h3 style="color:black"><b><i>Calculate against Nutritional Fact</i></b></h3>
+                        <p style="font-size:13px">Additional way to calculate your food carbon emission based on nutritional facts such as proteins/energy</p>
+                        <p style="font-size:13px">
+                            Please enter the kind of category and quantity of nutritions interms of <b><i>proteins(grams)/energy(calories)</i></b>
+                            to calculate your carbon footprints on food
+                        </p>
+                            <div class="form-group">
+                                <i> @Html.LabelFor(model => model.Category, "Category: ", htmlAttributes: new { @class = "control-label col-md-2" })</i>
+                                <div class="col-md-10">
 
 
-                                @Html.DropDownListFor(model => model.Category, (SelectList)ViewBag.Category, "-select-")
-                                @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
-                            </div> <br /><hr />
-                        </div>
-                        <div class="form-group">
-
-                            <i> @Html.Label("Nutritional Fact: ", htmlAttributes: new { @class = "control-label col-md-2" })</i>
-
-                            <div class="col-md-10">
-                                @Html.DropDownListFor(model => model.nutrition, (SelectList)ViewBag.ViewNutritionList, "-select-")
-                                @Html.ValidationMessageFor(model => model.nutrition, "", new { @class = "text-danger" })
+                                    @Html.DropDownListFor(model => model.Category, (SelectList)ViewBag.Category, "-select-", htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
+                                </div> <br /><hr />
                             </div>
-                        </div>
-                        <br /><br /> <br />
-                        <div class="form-group">
+                            <div class="form-group">
 
-                            <i> @Html.LabelFor(model => model.input, "Input (eg: 100,1000):", htmlAttributes: new { @class = "control-label col-md-2" })</i>
+                                <i> @Html.Label("Nutritions: ", htmlAttributes: new { @class = "control-label col-md-2" })</i>
 
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.input, new { htmlAttributes = new { @class = "form-control" } })
-                                @*@Html.ValidationMessageFor(model => model.input, "", new { @class = "text-danger" })*@
-                                <br /><br />
+                                <div class="col-md-10">
+                                    @Html.DropDownListFor(model => model.nutrition, (SelectList)ViewBag.ViewNutritionList, "-select-", htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.nutrition, "", new { @class = "text-danger" })
+                                </div>
                             </div>
-                        </div><br /><br />
+                            <br />
+                            <div class="form-group">
 
-                        <div class="form-group">
-                            <div class="col-md-offset-2 col-md-10">
-                                <input type="submit" value="Calculate" class="btn btn-default" />
+                                <i> @Html.LabelFor(model => model.input, "Quantity:", htmlAttributes: new { @class = "control-label col-md-2" })</i>
+
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.input, new { htmlAttributes = new { @class = "form-control" } })
+                                    @*@Html.ValidationMessageFor(model => model.input, "", new { @class = "text-danger" })*@
+                                    <br />
+                                </div>
                             </div>
-                        </div>
-                    </div> <br /><br /><br />
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Calculate carbon footprint" class="btn btn-default" />
+                                </div>
+                            </div>
+                    </div> <br />
                     <div class="form-group-sm">
                         <a href="@Url.Action("FoodMain", "Foods")" class="previous" style="background-color:#f1f1f1;color: black">&laquo; Back to Basic Calculator</a>
                     </div>
@@ -112,8 +114,8 @@
                     @if (ViewBag.carbonValue != null)
                     {
                         <div class="Output">
-                            <h4 style="color:darkslateblue">Your CO2 Emission is: </h4>
-                            <p style="color:darkslateblue"> @ViewBag.carbonValue</p>
+                            <h4 style="color:black">Your CO2 Emission is: </h4>
+                            <p style="color:black"><b> @ViewBag.carbonValue  Kg of CO<sub>2</sub></b></p>
                         </div>
                     }
                 </div>
