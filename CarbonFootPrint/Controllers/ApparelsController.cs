@@ -23,16 +23,15 @@ namespace CarbonFootPrint.Controllers
         }
 
 
-
+        //GET: Clothes list
         public ActionResult ApparelMain()
         {
             ViewBag.ApparelOne = new SelectList(db.Apparels, "Name", "Name");
-            //ViewBag.ApparelTwo = new SelectList(db.Apparels, "Name", "Name");
-            //ViewBag.ApparelThree = new SelectList(db.Apparels, "Name", "Name");
            
-
             return View();
         }
+
+        //Compute and provide co2 results for the  lcothes along woth tips and sugggestions
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -41,12 +40,7 @@ namespace CarbonFootPrint.Controllers
             ApparelCalculate apparelCalc = new ApparelCalculate();
 
             float qtyOneCFP = apparelCalc.generalApparelCalculate(apparelList.apparelOne, apparelList.quantityOne);
-          //  float qtyTwoCFP = apparelCalc.generalApparelCalculate(apparelList.apparelTwo, apparelList.quantityTwo);
-            //float qtyThreeCFP = apparelCalc.generalApparelCalculate(apparelList.apparelThree, apparelList.quantityThree);
-            
-            //float totalCFP = (qtyOneCFP + qtyTwoCFP + qtyThreeCFP);
-
-
+    
             float choicesApparelCalculateOne = apparelCalc.choicesApparelCalculateOne(qtyOneCFP);
             float choicesApparelCalculateTwo = apparelCalc.choicesApparelCalculateTwo(qtyOneCFP);
             float choicesApparelCalculateThree = apparelCalc.choicesApparelCalculateThree(qtyOneCFP);
@@ -62,112 +56,11 @@ namespace CarbonFootPrint.Controllers
             ViewBag.washClothesOrIncreaseWashingSize = Math.Round((decimal)choicesApparelCalculateFour, 2);
             ViewBag.reuseMore = Math.Round((decimal)choicesApparelCalculateFive, 2) ;
 
-          
-
             ViewBag.ApparelOne = new SelectList(db.Apparels, "Name", "Name");
             return View();
 
         }
 
-
-        // GET: Apparels/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Apparel apparel = db.Apparels.Find(id);
-            if (apparel == null)
-            {
-                return HttpNotFound();
-            }
-            return View(apparel);
-        }
-
-        // GET: Apparels/Create
-        public ActionResult Create()
-        {
-            ViewBag.Category_Id = new SelectList(db.Categories, "Id", "Kind");
-            return View();
-        }
-
-        // POST: Apparels/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Avg_Carbon_Footprint,Image_Path,Suggestions,Category_Id")] Apparel apparel)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Apparels.Add(apparel);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.Category_Id = new SelectList(db.Categories, "Id", "Kind", apparel.Category_Id);
-            return View(apparel);
-        }
-
-        // GET: Apparels/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Apparel apparel = db.Apparels.Find(id);
-            if (apparel == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.Category_Id = new SelectList(db.Categories, "Id", "Kind", apparel.Category_Id);
-            return View(apparel);
-        }
-
-        // POST: Apparels/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Avg_Carbon_Footprint,Image_Path,Suggestions,Category_Id")] Apparel apparel)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(apparel).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.Category_Id = new SelectList(db.Categories, "Id", "Kind", apparel.Category_Id);
-            return View(apparel);
-        }
-
-        // GET: Apparels/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Apparel apparel = db.Apparels.Find(id);
-            if (apparel == null)
-            {
-                return HttpNotFound();
-            }
-            return View(apparel);
-        }
-
-        // POST: Apparels/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Apparel apparel = db.Apparels.Find(id);
-            db.Apparels.Remove(apparel);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
 
         protected override void Dispose(bool disposing)
         {

@@ -7,12 +7,7 @@
 <html>
 <head>
     <style>
-        body {
-            background-image: url("/Content/images/RecycleCoverPic.jpg");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+     
 
         .Output {
            
@@ -32,7 +27,7 @@
     
 
         h2, h3, Label {
-            color: white;
+            color: black;
         }
 
         table, tr, td{
@@ -40,7 +35,7 @@
         }
     </style>
 </head>
-<body>
+<body style="background-color:cadetblue">
     
 
     @using (Html.BeginForm("RecycleMain", "Recycles", FormMethod.Post))
@@ -48,8 +43,8 @@
         @Html.AntiForgeryToken()
         <br /><br />
 
-        <h2 style="text-align:center; color:white">Recycle Carbon Calculator</h2> <br />
-        <p style="text-align:center; color:white"><i>Recycling - a most straightforward way to cut down the carbon emissions</i></p> <br />
+        <h2 style="text-align:center">Recycle Carbon Calculator</h2> <br />
+        <p style="text-align:center"><i>Recycling - a most straightforward way to cut down the carbon emissions</i></p> <br />
 
         <div class="jumbotron">
 
@@ -63,7 +58,7 @@
                             <h4 style="text-align:center; color:black"><i> Recyle Items </i></h4>
                         </td>
                         <td>
-                            <h4 style="text-align:center; color:black"><i> Quantity (eg: 1,2,3...)</i></h4>
+                            <h4 style="text-align:center; color:black"><i> Quantity (kilograms)</i></h4>
                             
                         </td>
                     </tr>
@@ -133,7 +128,7 @@
                 </table>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Calculate Your footprint" class="btn btn-default" style="justify-content: center;" />
+                        <input type="submit" value="Calculate carbon footprint" class="btn btn-default" style="justify-content: center;" />
                     </div>
                 </div>
             </div>

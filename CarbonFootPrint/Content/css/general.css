@@ -3,6 +3,10 @@
     bottom: 16px;
 }
 
+body {
+    background-color: cadetblue;
+}
+
 #content {
     overflow: auto;
     width: 1000px;

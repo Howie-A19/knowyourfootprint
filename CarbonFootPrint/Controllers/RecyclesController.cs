@@ -22,11 +22,14 @@ namespace CarbonFootPrint.Controllers
             return View(recycles.ToList());
         }
 
+        //GET: Recycle items 
         public ActionResult RecycleMain()
         {
             return View();
         }
 
+
+        //Compute co2 results based on recycle items and provides reuced level of co2
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult RecycleMain(RecycleQuantity recycleQty)
@@ -53,104 +56,7 @@ namespace CarbonFootPrint.Controllers
             return View();
         }
 
-        // GET: Recycles/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Recycle recycle = db.Recycles.Find(id);
-            if (recycle == null)
-            {
-                return HttpNotFound();
-            }
-            return View(recycle);
-        }
-
-        // GET: Recycles/Create
-        public ActionResult Create()
-        {
-            ViewBag.Category_Id = new SelectList(db.Categories, "Id", "Kind");
-            return View();
-        }
-
-        // POST: Recycles/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Carbon_Footprint_Primary,Carbon_Footprint_Secondary,Footprint_Differences,Image_Path,Suggestions,Category_Id")] Recycle recycle)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Recycles.Add(recycle);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.Category_Id = new SelectList(db.Categories, "Id", "Kind", recycle.Category_Id);
-            return View(recycle);
-        }
-
-        // GET: Recycles/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Recycle recycle = db.Recycles.Find(id);
-            if (recycle == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.Category_Id = new SelectList(db.Categories, "Id", "Kind", recycle.Category_Id);
-            return View(recycle);
-        }
-
-        // POST: Recycles/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Carbon_Footprint_Primary,Carbon_Footprint_Secondary,Footprint_Differences,Image_Path,Suggestions,Category_Id")] Recycle recycle)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(recycle).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.Category_Id = new SelectList(db.Categories, "Id", "Kind", recycle.Category_Id);
-            return View(recycle);
-        }
-
-        // GET: Recycles/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Recycle recycle = db.Recycles.Find(id);
-            if (recycle == null)
-            {
-                return HttpNotFound();
-            }
-            return View(recycle);
-        }
-
-        // POST: Recycles/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Recycle recycle = db.Recycles.Find(id);
-            db.Recycles.Remove(recycle);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+       
 
         protected override void Dispose(bool disposing)
         {
