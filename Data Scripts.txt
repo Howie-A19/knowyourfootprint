@@ -1,0 +1,183 @@
+drop table food_apparels_cloth_recycle_tips;
+drop table foods;
+drop table apparels;
+drop table recycle;
+drop table cloth_varieties;
+drop table categories;
+drop table Subscribers;
+drop table tips;
+
+CREATE TABLE [dbo].[Categories](
+	[Id] INT NOT NULL,
+	[Kind] NVARCHAR(max) NOT NULL,
+	PRIMARY KEY (Id)
+);
+
+CREATE TABLE Foods(
+	[Id] INT NOT NULL,
+	[Category] NVARCHAR(max) NOT NULL,
+	[Energy_PER_100gm] REAL NOT NULL,
+	[PER_SERVING_gm] REAL NOT NULL,
+	[E1_ACFP_PER_100gm] REAL NOT NULL,
+	[PROTEIN_PER_100gm] REAL NOT NULL,
+	[E2_ACFP_PROTEIN_PER_100gm] REAL NOT NULL,
+	[E3_ACFP_ENERGY_PER_100KCAL]REAL NOT NULL,
+	[Image_Path] VARCHAR(100),
+	[Suggestions] NVARCHAR(max),
+	[Category_Id] INT NOT NULL,
+	PRIMARY KEY (Id),
+	FOREIGN KEY (Category_Id) REFERENCES Categories(Id)
+);
+
+CREATE TABLE Apparels(
+	[Id] INT NOT NULL,
+	[Name] NVARCHAR(max) NOT NULL,
+	[Avg_Carbon_Footprint] REAL NOT NULL,
+	[Image_Path] VARCHAR(100),
+	[Suggestions] NVARCHAR(max),
+	[Category_Id] INT NOT NULL,
+	PRIMARY KEY (Id),
+	FOREIGN KEY (Category_Id) REFERENCES Categories(Id)
+);
+
+CREATE TABLE Recycle(
+	[Id] INT NOT NULL,
+	[Name] NVARCHAR(max) NOT NULL,
+	[Carbon_Footprint_Primary] REAL NOT NULL,
+	[Carbon_Footprint_Secondary] REAL NOT NULL,
+	[Footprint_Differences] REAL NOT NULL,
+	[Image_Path] VARCHAR(100),
+	[Suggestions] NVARCHAR(max),
+	[Category_Id] INT NOT NULL,
+	PRIMARY KEY (Id),
+	FOREIGN KEY (Category_Id) REFERENCES Categories(Id)
+);
+
+
+
+CREATE TABLE Tips(
+	[Id] INT NOT NULL,
+	[Tips_Kind] NVARCHAR(max) NOT NULL,
+	[Tips_Category] NVARCHAR(max) NOT NULL,
+	[Image_Path] VARCHAR(100),
+	[Tips] NVARCHAR(max),
+	PRIMARY KEY (Id)	
+);
+
+CREATE TABLE food_apparels_cloth_recycle_tips(
+	[foods_id] INT NOT NULL,
+	[apparels_id] INT NOT NULL,
+	[recycle_id] INT NOT NULL,
+	[tips_id] INT NOT NULL,		
+	PRIMARY KEY(foods_id,apparels_id,recycle_id,tips_id)
+);
+
+CREATE TABLE Subscribers(
+	[Id] INT NOT NULL,
+	[Mail_Id] NVARCHAR(max) NOT NULL,
+	[Tips_Id] INT NOT NULL,
+	PRIMARY KEY(Id),
+	FOREIGN KEY (Tips_Id) REFERENCES Tips(Id)	
+);
+
+ALTER TABLE food_apparels_cloth_recycle_tips
+	ADD CONSTRAINT food_ts FOREIGN KEY (foods_id)
+	REFERENCES Foods(id);
+	
+ALTER TABLE food_apparels_cloth_recycle_tips
+	ADD CONSTRAINT apparels_ts FOREIGN KEY (apparels_id)
+	REFERENCES Apparels(id);
+
+
+ALTER TABLE food_apparels_cloth_recycle_tips
+	ADD CONSTRAINT recycle_ts FOREIGN KEY (recycle_id)
+	REFERENCES recycle(id);
+	
+ALTER TABLE food_apparels_cloth_recycle_tips
+	ADD CONSTRAINT tips_ts FOREIGN KEY (tips_id)
+	REFERENCES tips(id);
+
+INSERT INTO CATEGORIES(Id, kind) VALUES (1, 'Food');
+INSERT INTO CATEGORIES(Id, kind) VALUES (2, 'Cloth');
+INSERT INTO CATEGORIES(Id, kind) VALUES (3, 'Recycle');
+
+FOODS:
+INSERT INTO FOODS VALUES(1,'Red Meat', 815.80, 75, 11.01, 25.38, 43.40, 1.35, '', '', 1);
+INSERT INTO FOODS VALUES(2,'Poultry', 923.73, 75, 0.69, 22.38, 3.06, 0.07, '', '', 1);
+INSERT INTO FOODS VALUES(3,'Fish', 678.22, 140, 0.50, 23.01, 2.17, 0.07, '', '', 1);
+INSERT INTO FOODS VALUES (4,'Eggs',642.18,120,0.14,12.98,1.1,0.02,'','',1);
+INSERT INTO FOODS VALUES (5,'Breads and cereals',1136.27,40,0.26,10.3,2.51,0.02,'','',1);
+INSERT INTO FOODS VALUES (6,'Fruit',230.25,150,0.13,0.78,17.03,0.06,'','',1);
+INSERT INTO FOODS VALUES (7,'Vegetables',303.63,75,0.14,4.31,3.23,0.05,'','',1);
+INSERT INTO FOODS VALUES (8,'Dairy',302.07,250,0.27,4.62,5.93,0.09,'','',1);
+INSERT INTO FOODS VALUES (9,'snack foods',1594.27,30,0.65,6.7,9.73,0.04,'','',1);
+INSERT INTO FOODS VALUES (11,'Sugar, tea, coffee',166.73,200,0.19,1.19,16.39,0.12,'','',1);
+INSERT INTO FOODS VALUES (12,'Alcohol',318.23,50,0.17,0.23,73.84,0.05,'','',1);
+
+
+TIPS:
+insert into tips values(1, 'Food', 'Vegetarian','', 'Healthy lifestyle' );
+
+SUBSCRIBER:
+insert into Subscribers values(1,'abc@gmail.com',1);
+
+		
+Apparels:
+INSERT INTO Apparels Values(1, 'Bottoms', 8.7, '', '',2);
+INSERT INTO Apparels Values(2, 'Dresses', 14.8, '', '', 2);
+INSERT INTO Apparels Values(3, 'Gloves', 1.1, '', '', 2);
+INSERT INTO Apparels Values(4, 'Jacket', 13.3, '', '', 2);
+INSERT INTO Apparels Values(5, 'Sportwear', 6.1, '', '', 2);
+INSERT INTO Apparels Values(6, 'Suits', 16.8, '', '', 2);
+INSERT INTO Apparels Values(7, 'Swimwear', 1.8, '', '', 2);
+INSERT INTO Apparels Values(8, 'Scarves,tie & accessories', 1.8, '', '', 2);
+INSERT INTO Apparels Values(9, 'Tops', 6.5, '', '', 2);
+INSERT INTO Apparels Values(10, 'Underwear', 1.9, '', '', 2);
+
+Recycle:
+INSERT INTO RECYCLE VALUES(1, 'Glass', 0.9, 0.5, 0.4, '', '', 3);
+INSERT INTO RECYCLE VALUES(2, 'Aluminium', 11.0, 0.4, 10.6, '', '', 3);
+INSERT INTO RECYCLE VALUES(3, 'Steel', 2.4, 0.3, 2.1, '', '', 3);
+INSERT INTO RECYCLE VALUES(4, 'Plastics', 2.1, 1.3, 0.8, '', '', 3);
+INSERT INTO RECYCLE VALUES(5, 'Paper and Cardboard', 1.1, 0.7, 0.4, '', '', 3);
+INSERT INTO RECYCLE VALUES(6, 'Organic Waste(composting)', 0.07, 0.05, 0.02, '', '', 3);
+INSERT INTO RECYCLE VALUES(7, 'Organic Waste(digestion)', 0.09, 0.01, 0.08, '', '', 3);
+
+
+Model file extra code:
+Food.cs:
+
+        public String nutrition { get; set; }
+        public String frequency { get; set; }
+        public float input { get; set; }
+Apparel.cs
+		 public class Apparel_List
+    {
+        public float quantityOne { get; set; }
+        public float quantityTwo { get; set; }
+        public float quantityThree { get; set; }
+
+        public String apparelOne { get; set; }
+        public String apparelTwo { get; set; }
+        public String apparelThree { get; set; }
+
+        public String optionOne { get; set; }
+        public String optionTwo { get; set; }
+        public String optionThree { get; set; }
+        public String optionFour { get; set; }
+        public String optionFive { get; set; }
+        public String optionSix { get; set; }
+    }
+	
+	Recycle.cs
+	  public class RecycleQuantity
+    {
+        public float glassQty { get; set; }
+        public float aluminiumQty { get; set; }
+        public float steelQty { get; set; }
+        public float plasticsQty { get; set; }
+        public float pcQty { get; set; }
+        public float owcQty { get; set; }
+        public float owdQty { get; set; }
+    }
+
