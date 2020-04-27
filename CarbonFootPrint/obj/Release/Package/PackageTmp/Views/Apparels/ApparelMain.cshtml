@@ -37,19 +37,19 @@
           <div class="form-horizontal">
 
               <h2 style="text-align:center">Clothing Carbon Calculator</h2> <br />
-              <p style="text-align:center">
+              <p style="text-align:center"><b><i>
                   On an average 3,700 litres of water goes into making a pair of jeans which involves manufacturing, production till
  transportation of the final product. This whole process emits around 30 kilograms of greenhouse gases.
 
 Tell us what's there in your wardrobe and we will calculate the impact of your purchase on climate. Additionally,
  we will provide you with tips on leading a sustainable fashion lifestyle.
                   
-                  
+                  </i></b>
                   </p> <br />
 
               @using (Html.BeginForm("ApparelMain", "Apparels", FormMethod.Post))
               {
-                  @Html.AntiForgeryToken()
+                  @*@Html.AntiForgeryToken()*@
 
                   <div class="jumbotron">
 

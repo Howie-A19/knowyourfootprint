@@ -34,7 +34,7 @@ namespace CarbonFootPrint.Controllers
         //Compute and provide co2 results for the  lcothes along woth tips and sugggestions
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public ActionResult ApparelMain(Apparel_List apparelList)
         {
             ApparelCalculate apparelCalc = new ApparelCalculate();

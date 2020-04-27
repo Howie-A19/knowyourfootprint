@@ -40,11 +40,12 @@
 
     @using (Html.BeginForm("RecycleMain", "Recycles", FormMethod.Post))
     {
-        @Html.AntiForgeryToken()
+        @*@Html.AntiForgeryToken()*@
         <br /><br />
 
         <h2 style="text-align:center">Recycle Carbon Calculator</h2> <br />
-        <p style="text-align:center"><i>Recycling - a most straightforward way to cut down the carbon emissions</i></p> <br />
+        <p style="text-align:center">
+            <b><i>Recycling - a most straightforward way to cut down the carbon emissions</i></b></p> <br />
 
         <div class="jumbotron">
 

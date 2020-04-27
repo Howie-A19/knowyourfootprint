@@ -8,6 +8,7 @@ using CarbonFootPrint.Models;
 
 namespace CarbonFootPrint.Controllers
 {
+   [BasicAuthentication("HLPA", "HLPA", BasicRealm = "localhost")]
     public class HomeController : Controller
     {
         private footprintdbEntities db = new footprintdbEntities();

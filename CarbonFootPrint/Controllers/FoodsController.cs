@@ -39,7 +39,7 @@ namespace CarbonFootPrint.Controllers
         //Compute and provide CO2 results based on food selection 
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public ActionResult FoodMain(Food food)
         {
             String category = food.Category;
@@ -88,7 +88,7 @@ namespace CarbonFootPrint.Controllers
         //Compute and provide co2 results based on food with additonal options.
 
     [HttpPost]
-    [ValidateAntiForgeryToken]
+    //[ValidateAntiForgeryToken]
     public ActionResult FoodAdvance(Food food)
         {
             String category = food.Category;
