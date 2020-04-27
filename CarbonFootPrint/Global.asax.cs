@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using CarbonFootPrint.Models;
 
 namespace CarbonFootPrint
 {
@@ -12,6 +13,7 @@ namespace CarbonFootPrint
     {
         protected void Application_Start()
         {
+            GlobalFilters.Filters.Add(new BasicAuthentication("HLPA", "HLPA"));
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

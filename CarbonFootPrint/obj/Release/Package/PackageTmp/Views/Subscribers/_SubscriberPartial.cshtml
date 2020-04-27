@@ -31,62 +31,30 @@
                 <div class="form-group">
                     <p> <img src="~/Content/images/SubscriberVegetables.jpg" width="100" height="100" alt="Cover Pic" align="left"> The carbon footprint of a vegetarian diet is about half that of a meat lover ’s diet.</p>
                 </div>
-                @*<h3 style="font-style:italic; text-align:center">for further updates - subscribe yourself</h3>*@
                 <br /><hr />
 
             </div>
 
 
             <div class="col-6 col-md-4">
-                @using (Html.BeginForm())
-                {
-                    @Html.AntiForgeryToken()
 
-                    if (ViewBag.Result != null)
-                    {
-                        <div class="alert alert-info">@ViewBag.Result</div>
-                    }
-
-                    <div class="form-horizontal">
-
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" }) <br /> <br />
-                        <h4 style="font-style:italic;color:black;text-align:center"> To get more tips- Subscribe your mail-id</h4>
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.Mail_Id, "Email Address: ", htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                @Html.EditorFor(model => model.Mail_Id, new { htmlAttributes = new { @class = "form-control" } })
-                                @Html.ValidationMessageFor(model => model.Mail_Id, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            @Html.LabelFor(model => model.Tips_Id, "Category: ", htmlAttributes: new { @class = "control-label col-md-2" })
-                            <div class="col-md-10">
-                                @Html.DropDownList("Tips_Id", null, htmlAttributes: new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.Tips_Id, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-offset-2 col-md-10">
-                                <input type="submit" value="subscribe here!" class="btn btn-default" style="color:black;background-color:white;margin-left:auto;margin-right:auto;display:block;margin-top:auto;margin-bottom:0%" />
-                            </div>
-                        </div>
-                    </div>
-                }
-                <br /><br />
-                <hr />
-
-                <br /><br /> <br />
-
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <h3 style="font-style:italic">Do you want to know latest trends with less carbon emission?</h3> <br />
+
+                <div style="color:black">
+                    <p>
+                        <img src="~/Content/images/SubscriberHemp.jpg" width="100" height="100" alt="Cover Pic" align="left">
+                        Hemp cloth meterial is the latest trend introduced as it has a 50% less ecological impact than cotton cloth
+                    </p>
+                </div>
+                <br /> <br /><br /><br /><br /><br /><br />
 
                 <div class="form-group">
                     <p>
                         <img src="~/Content/images/SubscriberNylon.jpg" width="100" height="100" alt="Cover Pic" align="left"> Reduce using <b>Nylon</b>
                         cloth materials as synthetic fiber emits much more carbon dioxide than the production of natural fiber cotton
                     </p>
-                </div> <br /><br />
+                </div> <br /><hr />
 
             </div>
 

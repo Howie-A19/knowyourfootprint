@@ -140,6 +140,7 @@
     <Compile Include="Models\Apparel.cs">
       <DependentUpon>footprintmodel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\BasicAuthentication.cs" />
     <Compile Include="Models\Category.cs">
       <DependentUpon>footprintmodel.tt</DependentUpon>
     </Compile>
@@ -192,6 +193,8 @@
     <Content Include="Content\images\icons\homeCloth.png" />
     <Content Include="Content\images\icons\food\bread.png" />
     <Content Include="Content\images\icons\homeRecycle.png" />
+    <Content Include="Content\images\icons\homeStudentOne.png" />
+    <Content Include="Content\images\SubscriberHemp.jpg" />
     <Content Include="Content\main.css" />
     <Content Include="Content\images\coverPic.jpg" />
     <Content Include="Content\images\foodCoverPage.jpg" />

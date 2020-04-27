@@ -31,7 +31,7 @@ namespace CarbonFootPrint.Controllers
 
         //Compute co2 results based on recycle items and provides reuced level of co2
         [HttpPost]
-        [ValidateAntiForgeryToken]
+       // [ValidateAntiForgeryToken]
         public ActionResult RecycleMain(RecycleQuantity recycleQty)
         {
             RecycleCalculate recycleCalc = new RecycleCalculate();
