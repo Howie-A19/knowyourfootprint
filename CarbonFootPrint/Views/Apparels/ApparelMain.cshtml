@@ -61,7 +61,7 @@ Tell us what's there in your wardrobe and we will calculate the impact of your p
                                   <i> @Html.LabelFor(model => model.apparelOne, "Clothes: ", htmlAttributes: new { @class = "control-label col-md-2" })</i>
                                   <div class="col-md-10">
 
-                                      @Html.DropDownListFor(model => model.apparelOne, (SelectList)ViewBag.ApparelOne, "-select-",htmlAttributes: new { @class = "form-control" })
+                                      @Html.DropDownListFor(model => model.apparelOne, (SelectList)ViewBag.ApparelOne, "-Select-",htmlAttributes: new { @class = "form-control" })
                                       @Html.ValidationMessageFor(model => model.apparelOne, "", new { @class = "text-danger" })
                                   </div> <br />
                               </div>
@@ -73,7 +73,7 @@ Tell us what's there in your wardrobe and we will calculate the impact of your p
 
                                   <div class="col-md-10">
                                       @Html.EditorFor(model => model.quantityOne, new { htmlAttributes = new { @class = "form-control" } })
-                                     
+                                      @Html.ValidationMessageFor(model => model.quantityOne, "", new { @class = "text-danger" })
                                       <br /><br />
                                   </div>
                               </div>
@@ -91,9 +91,10 @@ Tell us what's there in your wardrobe and we will calculate the impact of your p
                               {
                                   <div class="Output">
 
-                                      <h4 style="color:black">Your CO2 Emission is: </h4>
-                                      <p style="color:black"> <b> @ViewBag.actualCFP  Kg of CO<sub>2</sub></b></p>
-
+                                      <div class="label">
+                                          <h4 style="color:black">Your CO2 Emission is: </h4>
+                                          <p style="color:black"> <b> @ViewBag.actualCFP  Kg of CO<sub>2</sub></b></p>
+                                      </div>
 
 
 
@@ -108,8 +109,8 @@ Tell us what's there in your wardrobe and we will calculate the impact of your p
                                               @if (ViewBag.ecoEfficiency != null)
                                               {
                                                   <li>
-                                                      <p style="font-size:medium">
-                                                          Buying these clothes with eco-efficiency brands reduces <b> @ViewBag.ecoEfficiency Kg of CO<sub>2</sub></b>
+                                                      <p>
+                                                          Buying these clothes with eco-efficiency brands reduces <b><i> @ViewBag.ecoEfficiency Kg of CO<sub>2</sub></i></b>
                                                       </p>
 
                                                   </li>
@@ -118,8 +119,8 @@ Tell us what's there in your wardrobe and we will calculate the impact of your p
                                               @if (ViewBag.durable != null)
                                               {
                                                   <li>
-                                                      <p style="font-size:medium">
-                                                          Buying these clothes with durability reduces <b> @ViewBag.durable Kg of CO<sub>2</sub></b>
+                                                      <p>
+                                                          Buying these clothes with durability reduces <b><i> @ViewBag.durable Kg of CO<sub>2</sub></i></b>
                                                       </p>
 
                                                   </li>
@@ -127,9 +128,9 @@ Tell us what's there in your wardrobe and we will calculate the impact of your p
 
                                               @if (ViewBag.cleanCloth != null)
                                               {
-                                                  <li style="font-size:medium">
-                                                      <p style="font-size:medium">
-                                                          Cleaning these item with less frequency reduces <b> @ViewBag.cleanCloth Kg of CO<sub>2</sub></b>
+                                                  <li>
+                                                      <p>
+                                                          Cleaning these item with less frequency reduces <b><i> @ViewBag.cleanCloth Kg of CO<sub>2</sub></i></b>
                                                       </p>
 
                                                   </li>
@@ -138,8 +139,8 @@ Tell us what's there in your wardrobe and we will calculate the impact of your p
                                               @if (ViewBag.washClothesOrIncreaseWashingSize != null)
                                               {
                                                   <li>
-                                                      <p style="font-size:medium">
-                                                          Washing these clothes with low temperature or increasing drying load of the size of washing reduces <b> @ViewBag.washClothesOrIncreaseWashingSize Kg of CO<sub>2</sub></b>
+                                                      <p>
+                                                          Washing these clothes with low temperature or increasing drying load of the size of washing reduces <b><i> @ViewBag.washClothesOrIncreaseWashingSize Kg of CO<sub>2</sub></i></b>
                                                       </p>
 
                                                   </li>
@@ -148,8 +149,8 @@ Tell us what's there in your wardrobe and we will calculate the impact of your p
                                               @if (ViewBag.reuseMore != null)
                                               {
                                                   <li>
-                                                      <p style="font-size:medium">
-                                                          Reusing these clothes reduces <b> @ViewBag.reuseMore Kg of CO<sub>2</sub></b>
+                                                      <p>
+                                                          Reusing these clothes reduces <b><i> @ViewBag.reuseMore Kg of CO<sub>2</sub></i></b>
                                                       </p>
 
                                                   </li>
