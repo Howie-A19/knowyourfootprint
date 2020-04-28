@@ -11,6 +11,7 @@ namespace CarbonFootPrint.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Food
     {
@@ -21,6 +22,8 @@ namespace CarbonFootPrint.Models
         }
     
         public int Id { get; set; }
+
+        [Required(ErrorMessage = "Please select any item")]
         public string Category { get; set; }
         public float Energy_PER_100gm { get; set; }
         public float PER_SERVING_gm { get; set; }
@@ -32,8 +35,13 @@ namespace CarbonFootPrint.Models
         public string Suggestions { get; set; }
         public int Category_Id { get; set; }
 
+        [Required(ErrorMessage = "Please select any item")]
         public String nutrition { get; set; }
+
+        [Required(ErrorMessage = "Please select any item")]
         public String frequency { get; set; }
+
+        [Required(ErrorMessage = "Please enter quantity")]
         public float input { get; set; }
 
         public virtual Category Category1 { get; set; }

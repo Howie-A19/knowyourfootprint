@@ -21,7 +21,7 @@
             padding-top: 50px;
             padding-right: 30px;
             padding-bottom: 50px;
-            padding-left: 80px;
+            padding-left: 30px;
         }
 
         .boxModel {
@@ -69,7 +69,7 @@
                             <div class="col-md-10">
 
 
-                                @Html.DropDownListFor(model => model.Category, (SelectList)ViewBag.Category, "-select-", htmlAttributes: new { @class = "form-control" })
+                                @Html.DropDownListFor(model => model.Category, (SelectList)ViewBag.Category, "-Select-", htmlAttributes: new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
                             </div> <br /><hr />
                         </div>
@@ -78,8 +78,9 @@
                             <i> @Html.Label("Nutritions: ", htmlAttributes: new { @class = "control-label col-md-2" })</i>
 
                             <div class="col-md-10">
-                                @Html.DropDownListFor(model => model.nutrition, (SelectList)ViewBag.ViewNutritionList, "-select-", htmlAttributes: new { @class = "form-control" })
+                                @Html.DropDownListFor(model => model.nutrition, (SelectList)ViewBag.ViewNutritionList, "-Select-", htmlAttributes: new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.nutrition, "", new { @class = "text-danger" })
+
                             </div>
                         </div>
                         <br />
@@ -89,7 +90,7 @@
 
                             <div class="col-md-10">
                                 @Html.EditorFor(model => model.input, new { htmlAttributes = new { @class = "form-control" } })
-                                @*@Html.ValidationMessageFor(model => model.input, "", new { @class = "text-danger" })*@
+                                @Html.ValidationMessageFor(model => model.input, "", new { @class = "text-danger" })
                                 <br />
                             </div>
                         </div>
@@ -114,8 +115,10 @@
                     @if (ViewBag.carbonValue != null)
                     {
                         <div class="Output">
-                            <h4 style="color:black">Your CO2 Emission is: </h4>
-                            <p style="color:black"><b> @ViewBag.carbonValue  Kg of CO<sub>2</sub></b></p>
+                            <div class="label">
+                                <h4 style="color:black">Your CO2 Emission is: </h4>
+                                <p style="color:black"><b> @ViewBag.carbonValue  Kg of CO<sub>2</sub></b></p>
+                            </div>
                         </div>
                     }
                 </div>

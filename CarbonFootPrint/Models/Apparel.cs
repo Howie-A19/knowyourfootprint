@@ -11,6 +11,7 @@ namespace CarbonFootPrint.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Apparel
     {
@@ -34,7 +35,10 @@ namespace CarbonFootPrint.Models
 
     public class Apparel_List
     {
+        [Required(ErrorMessage = "Please enter quantity")]
         public float quantityOne { get; set; }
+
+        [Required(ErrorMessage = "Please select any item")]
         public String apparelOne { get; set; }
        
     }

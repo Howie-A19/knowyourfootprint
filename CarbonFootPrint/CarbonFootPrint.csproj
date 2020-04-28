@@ -194,6 +194,7 @@
     <Content Include="Content\images\icons\food\bread.png" />
     <Content Include="Content\images\icons\homeRecycle.png" />
     <Content Include="Content\images\icons\homeStudentOne.png" />
+    <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\SubscriberHemp.jpg" />
     <Content Include="Content\main.css" />
     <Content Include="Content\images\coverPic.jpg" />

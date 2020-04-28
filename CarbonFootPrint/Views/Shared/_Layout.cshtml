@@ -24,45 +24,55 @@
 
                 @*<div class="navbar-left">
 
-                </div>*@
-                <a class="navbar-brand" href="@Url.Action("Index", "Home")">Know your Footprint</a>
+        </div>*@
+                <div class="navbar-left" style="color:white">
+                    <ul class="nav navbar-nav">
+                        <li><img src="~/Content/images/logo.png" class="control-label" width="40" height="40" alt="hello image" /> &nbsp;</li>
+                        <li><a class="navbar-brand" href="@Url.Action("Index", "Home")">Know your Footprint</a></li>
+                    </ul>
+                        
+                        
 
-                <div class="navbar-right" style="color:white">
-                    <div class="navbar-header">
-
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-
-                        @*<a class="navbar-brand" href="#">WebSiteName</a>*@
-                    </div>
-                    <div>
-
-                        <div class="collapse navbar-collapse" id="myNavbar">
-                            <ul class="nav navbar-nav">
-
-                                <li class="dropdown">
-                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Lifestyles <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li> <a href="@Url.Action("FoodMain", "Foods")">Food</a></li>
-                                        <li> <a href="@Url.Action("ApparelMain", "Apparels")">Clothing</a></li>
-                                        <li><a href="@Url.Action("RecycleMain", "Recycles")">Recycle</a></li>
-                                    </ul>
-                                </li>
-                                @*<li><a href="@Url.Action("Index", "Home")">Commute</a></li>
-                                <li> <a href="@Url.Action("Index", "Home")">What we do?</a></li>
-                               
-                                <li><a href="@Url.Action("Index", "Home")">FAQ's</a></li>*@
-
-                            </ul>
-                        </div>
-                    </div>
                 </div>
 
-            </div>
-        </nav>
+                   
+
+                    <div class="navbar-right" style="color:white">
+                        <div class="navbar-header">
+
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                            @*<a class="navbar-brand" href="#">WebSiteName</a>*@
+                        </div>
+                        <div>
+
+                            <div class="collapse navbar-collapse" id="myNavbar">
+                                <ul class="nav navbar-nav">
+
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Lifestyles <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li> <a href="@Url.Action("FoodMain", "Foods")">Food</a></li>
+                                            <li> <a href="@Url.Action("ApparelMain", "Apparels")">Clothing</a></li>
+                                            <li><a href="@Url.Action("RecycleMain", "Recycles")">Recycle</a></li>
+                                        </ul>
+                                    </li>
+                                    @*<li><a href="@Url.Action("Index", "Home")">Commute</a></li>
+                            <li> <a href="@Url.Action("Index", "Home")">What we do?</a></li>
+
+                            <li><a href="@Url.Action("Index", "Home")">FAQ's</a></li>*@
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+</nav>
 
 
         <div class="container body-content">
